@@ -1,8 +1,5 @@
-.App h1 {
-  text-align: center;
-}
-
-.App p {
-  text-align: center;
-  padding: 30px;
+body {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
 }

@@ -1,12 +1,16 @@
 import React, { Component } from "react";
 
-import SearchForm from "./components/SearchForm/SearchForm";
+import SearchForm from "../../components/SearchForm/SearchForm";
 import "./MainPage.css";
 
 export default class MainPage extends Component {
   onSearchForm = () => {
-    alert(`Будет сделано`);
+    this.props.history.push("/search");
   };
+
+  componentDidMount() {
+    console.log(this.props);
+  }
 
   render() {
     return (

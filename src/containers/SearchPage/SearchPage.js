@@ -4,6 +4,7 @@ import uniqueId from "lodash/uniqueId";
 
 import SearchForm from "../../components/SearchForm/SearchForm";
 import Shop from "../../components/Shop/Shop";
+import Spinner from "../../components/Spinner/Spinner";
 import "./SearchPage.css";
 
 class SearchPage extends Component {
@@ -36,11 +37,21 @@ class SearchPage extends Component {
         vk: "vadimcpp",
         instagram: null
       }
-    ]
+    ],
+    isLoading: true
+  };
+
+  componentDidMount() {
+    setTimeout(this.finishLoading, 2000);
+  }
+
+  finishLoading = () => {
+    this.setState({ isLoading: false });
   };
 
   render() {
-    const renderData = this.state.testData.map(item => {
+    const { testData, isLoading } = this.state;
+    const renderData = testData.map(item => {
       return (
         <Shop
           key={uniqueId()}
@@ -53,10 +64,11 @@ class SearchPage extends Component {
         />
       );
     });
+
     return (
       <Container style={{ padding: "20px" }}>
         <SearchForm />
-        {renderData}
+        {isLoading ? <Spinner /> : renderData}
       </Container>
     );
   }

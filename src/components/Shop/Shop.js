@@ -3,10 +3,18 @@ import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 
 const Shop = props => {
-  const { number, title, description, phone, vk, instagram } = props;
+  const {
+    number,
+    title,
+    description,
+    phone,
+    vk,
+    instagram,
+    onSelectShop
+  } = props;
   return (
     <Container style={{ padding: "20px" }}>
-      <Card>
+      <Card onClick={() => onSelectShop(props.number)}>
         <Card.Body>
           <Card.Title>
             {title}. Повильон № {number}

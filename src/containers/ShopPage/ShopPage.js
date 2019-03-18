@@ -1,13 +1,10 @@
 import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
-import uniqueId from "lodash/uniqueId";
+import Card from "react-bootstrap/Card";
 
-import SearchForm from "../../components/SearchForm/SearchForm";
-import Shop from "../../components/Shop/Shop";
 import Spinner from "../../components/Spinner/Spinner";
-import "./SearchPage.css";
 
-class SearchPage extends Component {
+class ShopPage extends Component {
   state = {
     testData: [
       {
@@ -49,34 +46,34 @@ class SearchPage extends Component {
     this.setState({ isLoading: false });
   };
 
-  selectShop = id => {
-    this.props.history.push(`/Повильон/${id}`);
+  renderShop = () => {
+    const selectedShop = this.state.testData.filter(
+      shop => shop.number === +this.props.match.params.id
+    );
+    const shop = selectedShop[0];
+    const shopComponent = (
+      <Card>
+        <Card.Body>
+          <Card.Title>
+            {shop.title}. Повильон № {shop.number}
+          </Card.Title>
+          {shop.description ? <Card.Text>{shop.description}</Card.Text> : null}
+          {shop.phone ? <Card.Text>Телефон: {shop.phone}</Card.Text> : null}
+          {shop.vk ? <Card.Link href={shop.vk}>Вконтакте</Card.Link> : null}
+          {shop.instagram ? (
+            <Card.Link href={shop.instagram}>Instagram</Card.Link>
+          ) : null}
+        </Card.Body>
+      </Card>
+    );
+    return shopComponent;
   };
 
   render() {
-    const { testData, isLoading } = this.state;
-    const renderData = testData.map(item => {
-      return (
-        <Shop
-          onSelectShop={this.selectShop}
-          key={uniqueId()}
-          number={item.number}
-          title={item.title}
-          description={item.description}
-          phone={item.phone}
-          vk={item.vk}
-          instagram={item.instagram}
-        />
-      );
-    });
-
-    return (
-      <Container style={{ padding: "20px" }}>
-        <SearchForm />
-        {isLoading ? <Spinner /> : renderData}
-      </Container>
-    );
+    const { isLoading } = this.state;
+    const content = isLoading ? <Spinner /> : this.renderShop();
+    return <Container style={{ padding: "20px" }}>{content}</Container>;
   }
 }
 
-export default SearchPage;
+export default ShopPage;

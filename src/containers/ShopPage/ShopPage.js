@@ -2,13 +2,10 @@ import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 
-import testData from "../../data/shops.json";
-
 import Spinner from "../../components/Spinner/Spinner";
 
 class ShopPage extends Component {
   state = {
-    testData,
     isLoading: true
   };
 
@@ -21,7 +18,7 @@ class ShopPage extends Component {
   };
 
   renderShop = () => {
-    const selectedShop = this.state.testData.filter(
+    const selectedShop = this.props.testData.filter(
       shop => shop.number === +this.props.match.params.id
     );
     const shop = selectedShop[0];

@@ -6,11 +6,9 @@ import SearchForm from "../../components/SearchForm/SearchForm";
 import Shop from "../../components/Shop/Shop";
 import Spinner from "../../components/Spinner/Spinner";
 import "./SearchPage.css";
-import testData from "../../data/shops.json";
 
 class SearchPage extends Component {
   state = {
-    testData,
     isLoading: true
   };
 
@@ -23,12 +21,12 @@ class SearchPage extends Component {
   };
 
   selectShop = id => {
-    this.props.history.push(`/Повильон/${id}`);
+    this.props.history.push(`/повильон/${id}`);
   };
 
   render() {
-    const { testData, isLoading } = this.state;
-    const renderData = testData.map(item => {
+    const { isLoading } = this.state;
+    const renderData = this.props.testData.map(item => {
       return (
         <Shop
           onSelectShop={this.selectShop}

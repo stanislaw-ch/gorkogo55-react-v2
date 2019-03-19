@@ -10,7 +10,7 @@ import testData from "../../data/shops.json";
 
 class SearchPage extends Component {
   state = {
-    testData: testData,
+    testData,
     isLoading: true
   };
 

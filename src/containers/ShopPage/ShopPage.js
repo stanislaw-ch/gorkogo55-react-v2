@@ -2,44 +2,18 @@ import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 
+import testData from "../../data/shops.json";
+
 import Spinner from "../../components/Spinner/Spinner";
 
 class ShopPage extends Component {
   state = {
-    testData: [
-      {
-        number: 1,
-        title: "цветы",
-        description: null,
-        keywords: "букет, розы, ромашки",
-        phone: "12345678",
-        vk: null,
-        instagram: "rose12345"
-      },
-      {
-        number: 216,
-        title: "скупка и ремонт техники",
-        description: null,
-        keywords: null,
-        phone: "697966",
-        vk: null,
-        instagram: "@vadimcpp"
-      },
-      {
-        number: 40,
-        title: "nextek",
-        description: "комьютерная техника",
-        keywords: "нотбук, монитор, принтер",
-        phone: null,
-        vk: "vadimcpp",
-        instagram: null
-      }
-    ],
+    testData,
     isLoading: true
   };
 
   componentDidMount() {
-    setTimeout(this.finishLoading, 2000);
+    setTimeout(this.finishLoading, 500);
   }
 
   finishLoading = () => {

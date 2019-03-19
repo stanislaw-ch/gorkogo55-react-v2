@@ -14,7 +14,7 @@ const Shop = props => {
   } = props;
   return (
     <Container style={{ padding: "20px" }}>
-      <Card onClick={() => onSelectShop(props.number)}>
+      <Card onClick={() => onSelectShop(number)}>
         <Card.Body>
           <Card.Title>
             {title}. Повильон № {number}

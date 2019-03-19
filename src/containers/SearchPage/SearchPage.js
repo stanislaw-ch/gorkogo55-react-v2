@@ -6,43 +6,16 @@ import SearchForm from "../../components/SearchForm/SearchForm";
 import Shop from "../../components/Shop/Shop";
 import Spinner from "../../components/Spinner/Spinner";
 import "./SearchPage.css";
+import testData from "../../data/shops.json";
 
 class SearchPage extends Component {
   state = {
-    testData: [
-      {
-        number: 1,
-        title: "цветы",
-        description: null,
-        keywords: "букет, розы, ромашки",
-        phone: "12345678",
-        vk: null,
-        instagram: "rose12345"
-      },
-      {
-        number: 216,
-        title: "скупка и ремонт техники",
-        description: null,
-        keywords: null,
-        phone: "697966",
-        vk: null,
-        instagram: "@vadimcpp"
-      },
-      {
-        number: 40,
-        title: "nextek",
-        description: "комьютерная техника",
-        keywords: "нотбук, монитор, принтер",
-        phone: null,
-        vk: "vadimcpp",
-        instagram: null
-      }
-    ],
+    testData: testData,
     isLoading: true
   };
 
   componentDidMount() {
-    setTimeout(this.finishLoading, 2000);
+    setTimeout(this.finishLoading, 500);
   }
 
   finishLoading = () => {

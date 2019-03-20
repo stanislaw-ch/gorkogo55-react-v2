@@ -21,7 +21,7 @@ class SearchPage extends Component {
   };
 
   selectShop = id => {
-    this.props.history.push(`/повильон/${id}`);
+    this.props.history.push(`/shop/${id}`);
   };
 
   render() {

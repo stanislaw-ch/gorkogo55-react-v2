@@ -17,13 +17,13 @@ class App extends Component {
         <Switch>
           <Route path="/" exact component={MainPage} />
           <Route
-            path="/найти"
+            path="/search"
             render={routeProps => (
               <SearchPage {...routeProps} testData={this.state.testData} />
             )}
           />
           <Route
-            path="/повильон/:id"
+            path="/shop/:id"
             render={routeProps => (
               <ShowPage {...routeProps} testData={this.state.testData} />
             )}

@@ -5,7 +5,7 @@ import "./MainPage.css";
 
 export default class MainPage extends Component {
   onSearchForm = () => {
-    this.props.history.push("/найти");
+    this.props.history.push("/search");
   };
 
   render() {

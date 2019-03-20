@@ -9,17 +9,43 @@ import "./App.css";
 
 class App extends Component {
   state = {
-    testData
+    testData,
+    searchValue: ""
   };
+  changeSearchValue = event => {
+    event.preventDefault();
+    this.setState({ searchValue: event.target.value });
+  };
+
+  clearSearchValue = () => {
+    this.setState({ searchValue: "" });
+  };
+
   render() {
     return (
       <div className="App">
         <Switch>
-          <Route path="/" exact component={MainPage} />
+          <Route
+            path="/"
+            exact
+            render={routeProps => (
+              <MainPage
+                {...routeProps}
+                searchValue={this.state.searchValue}
+                clearSearchValue={this.clearSearchValue}
+                changeSearchValue={this.changeSearchValue}
+              />
+            )}
+          />
           <Route
             path="/search"
             render={routeProps => (
-              <SearchPage {...routeProps} testData={this.state.testData} />
+              <SearchPage
+                {...routeProps}
+                changeSearchValue={this.changeSearchValue}
+                testData={this.state.testData}
+                searchValue={this.state.searchValue}
+              />
             )}
           />
           <Route

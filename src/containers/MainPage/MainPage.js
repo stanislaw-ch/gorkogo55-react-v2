@@ -8,6 +8,10 @@ export default class MainPage extends Component {
     this.props.history.push("/search");
   };
 
+  componentDidMount() {
+    this.props.clearSearchValue();
+  }
+
   render() {
     return (
       <div className="MainPage">
@@ -17,7 +21,11 @@ export default class MainPage extends Component {
           Введите в поисковое поле номер телефона, название магазина, или товар
           который вы хотите приобрести
         </p>
-        <SearchForm onSearchForm={this.onSearchForm} />
+        <SearchForm
+          onSearchForm={this.onSearchForm}
+          searchValue={this.props.searchValue}
+          changeSearchValue={this.props.changeSearchValue}
+        />
       </div>
     );
   }

@@ -43,7 +43,10 @@ class SearchPage extends Component {
 
     return (
       <Container style={{ padding: "20px" }}>
-        <SearchForm />
+        <SearchForm
+          searchValue={this.props.searchValue}
+          changeSearchValue={this.props.changeSearchValue}
+        />
         {isLoading ? <Spinner /> : renderData}
       </Container>
     );

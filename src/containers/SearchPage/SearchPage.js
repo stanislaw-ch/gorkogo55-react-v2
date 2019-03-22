@@ -27,29 +27,24 @@ class SearchPage extends Component {
   render() {
     const { isLoading } = this.state;
 
-    let requiredShops = null;
-    if (this.props.searchValue !== "") {
-      requiredShops = this.props.testData
-        .filter(item =>
-          item.title
-            .toLowerCase()
-            .includes(this.props.searchValue.toLowerCase())
-        )
-        .map(item => {
-          return (
-            <Shop
-              onSelectShop={this.selectShop}
-              key={uniqueId()}
-              number={item.number}
-              title={item.title}
-              description={item.description}
-              phone={item.phone}
-              vk={item.vk}
-              instagram={item.instagram}
-            />
-          );
-        });
-    }
+    let requiredShops = this.props.testData
+      .filter(item =>
+        item.title.toLowerCase().includes(this.props.searchValue.toLowerCase())
+      )
+      .map(item => {
+        return (
+          <Shop
+            onSelectShop={this.selectShop}
+            key={uniqueId()}
+            number={item.number}
+            title={item.title}
+            description={item.description}
+            phone={item.phone}
+            vk={item.vk}
+            instagram={item.instagram}
+          />
+        );
+      });
 
     return (
       <Container style={{ padding: "20px" }}>

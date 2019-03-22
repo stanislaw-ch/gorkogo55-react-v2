@@ -1,7 +1,13 @@
 body {
-  text-align: center;
+  height: 100vh;
 }
 
 .MainPage {
-  padding: 30px;
+  height: 100vh;
+  display: flex;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  padding: 5%;
 }

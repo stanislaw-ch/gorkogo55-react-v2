@@ -11,7 +11,7 @@ const searchForm = props => {
   return (
     <Container>
       <Row>
-        <Col>
+        <Col md="10" xs="8">
           <Form.Control
             type="text"
             placeholder="Что найти?"
@@ -19,7 +19,7 @@ const searchForm = props => {
             onChange={changeSearchValue}
           />
         </Col>
-        <Col md="auto">
+        <Col md="2" xs="4">
           <Button variant="primary" onClick={() => onSearchForm()}>
             Найти
           </Button>

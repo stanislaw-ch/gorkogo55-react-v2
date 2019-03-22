@@ -6,12 +6,12 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 
 const searchForm = props => {
-  const { onSearchForm, searchValue, changeSearchValue } = props;
+  const { onSearchForm, searchValue, changeSearchValue, location } = props;
 
   return (
     <Container>
       <Row>
-        <Col md="10" xs="8">
+        <Col>
           <Form.Control
             type="text"
             placeholder="Что найти?"
@@ -19,11 +19,13 @@ const searchForm = props => {
             onChange={changeSearchValue}
           />
         </Col>
-        <Col md="2" xs="4">
-          <Button variant="primary" onClick={() => onSearchForm()}>
-            Найти
-          </Button>
-        </Col>
+        {location.pathname !== "/search" ? (
+          <Col md="2" xs="4">
+            <Button variant="primary" onClick={() => onSearchForm()}>
+              Найти
+            </Button>
+          </Col>
+        ) : null}
       </Row>
     </Container>
   );

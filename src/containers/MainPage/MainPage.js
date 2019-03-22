@@ -22,6 +22,7 @@ export default class MainPage extends Component {
           который вы хотите приобрести
         </p>
         <SearchForm
+          {...this.props}
           onSearchForm={this.onSearchForm}
           searchValue={this.props.searchValue}
           changeSearchValue={this.props.changeSearchValue}

@@ -51,6 +51,7 @@ class SearchPage extends Component {
     return (
       <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
         <SearchForm
+          {...this.props}
           searchValue={this.props.searchValue}
           changeSearchValue={this.props.changeSearchValue}
         />

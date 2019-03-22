@@ -1,5 +1,5 @@
 import React from "react";
-import Container from "react-bootstrap/Container";
+import ListGroup from "react-bootstrap/ListGroup";
 import Card from "react-bootstrap/Card";
 
 const Shop = props => {
@@ -13,19 +13,17 @@ const Shop = props => {
     onSelectShop
   } = props;
   return (
-    <Container style={{ padding: "20px" }}>
-      <Card onClick={() => onSelectShop(number)}>
-        <Card.Body>
-          <Card.Title>
-            {title}. Повильон № {number}
-          </Card.Title>
-          {description ? <Card.Text>{description}</Card.Text> : null}
-          {phone ? <Card.Text>Телефон: {phone}</Card.Text> : null}
-          {vk ? <Card.Link href={vk}>Вконтакте</Card.Link> : null}
-          {instagram ? <Card.Link href={instagram}>Instagram</Card.Link> : null}
-        </Card.Body>
-      </Card>
-    </Container>
+    <ListGroup.Item
+      onClick={() => onSelectShop(number)}
+      style={{ padding: "1vh" }}
+    >
+      <h5>{title}</h5>
+      <p> № {number}</p>
+      {description ? <p>{description}</p> : null}
+      {phone ? <p>Телефон: {phone}</p> : null}
+      {vk ? <Card.Link href={vk}>Вконтакте</Card.Link> : null}
+      {instagram ? <Card.Link href={instagram}>Instagram</Card.Link> : null}
+    </ListGroup.Item>
   );
 };
 

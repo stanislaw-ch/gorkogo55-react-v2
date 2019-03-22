@@ -1,5 +1,7 @@
 import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
+import ListGroup from "react-bootstrap/ListGroup";
+
 import uniqueId from "lodash/uniqueId";
 
 import SearchForm from "../../components/SearchForm/SearchForm";
@@ -47,12 +49,18 @@ class SearchPage extends Component {
       });
 
     return (
-      <Container style={{ padding: "20px" }}>
+      <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
         <SearchForm
           searchValue={this.props.searchValue}
           changeSearchValue={this.props.changeSearchValue}
         />
-        {isLoading ? <Spinner /> : requiredShops}
+        {isLoading ? (
+          <Spinner />
+        ) : (
+          <ListGroup style={{ padding: "2vh", paddingTop: "5vh" }}>
+            {requiredShops}
+          </ListGroup>
+        )}
       </Container>
     );
   }

@@ -3,8 +3,9 @@
 }
 
 .Shop p,
-.Shop h5 {
+.Shop h6 {
   margin: 0;
+  text-align: left;
 }
 
 .Shop p {

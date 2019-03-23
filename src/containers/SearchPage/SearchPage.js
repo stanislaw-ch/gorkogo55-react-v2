@@ -41,9 +41,6 @@ class SearchPage extends Component {
             number={item.number}
             title={item.title}
             description={item.description}
-            phone={item.phone}
-            vk={item.vk}
-            instagram={item.instagram}
             keywords={item.keywords}
           />
         );

@@ -44,6 +44,7 @@ class SearchPage extends Component {
             phone={item.phone}
             vk={item.vk}
             instagram={item.instagram}
+            keywords={item.keywords}
           />
         );
       });

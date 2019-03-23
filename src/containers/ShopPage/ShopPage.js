@@ -26,7 +26,7 @@ class ShopPage extends Component {
       <Card>
         <Card.Body>
           <Card.Title>
-            {shop.title}. Повильон № {shop.number}
+            {shop.title}. Павильон № {shop.number}
           </Card.Title>
           {shop.description ? <Card.Text>{shop.description}</Card.Text> : null}
           {shop.phone ? <Card.Text>Телефон: {shop.phone}</Card.Text> : null}

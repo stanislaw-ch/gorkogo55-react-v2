@@ -4,20 +4,23 @@ import Card from "react-bootstrap/Card";
 
 import "./Shop.css";
 
+const capitalizeFirstLetter = (string) => {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
 const Shop = props => {
   const { number, title, description, keywords, onSelectShop } = props;
   return (
     <ListGroup.Item
       className="Shop"
       onClick={() => onSelectShop(number)}
-      // style={{ padding: "1vh" }}
     >
       <h6>
-        № {number}. {title}
+        {number}. {capitalizeFirstLetter(title)}
       </h6>
       {description && keywords ? (
         <p>
-          {description}. Ключевые слова: {keywords}
+          {description}. <i>{keywords}</i>
         </p>
       ) : description ? (
         <p>{description}</p>

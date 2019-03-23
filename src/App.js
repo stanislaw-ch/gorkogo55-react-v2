@@ -17,7 +17,6 @@ const spreadSheetKey = '1rg0Wkb4E1MccFnNJcasmn4uUwxNXDOs_ObeOC9MyYiM';
 
 class App extends Component {
   state = {
-    testData,
     searchValue: "",
     data: testData,
   };
@@ -64,7 +63,7 @@ class App extends Component {
               <SearchPage
                 {...routeProps}
                 changeSearchValue={this.changeSearchValue}
-                testData={this.state.testData}
+                data={this.state.data}
                 searchValue={this.state.searchValue}
               />
             )}
@@ -72,7 +71,7 @@ class App extends Component {
           <Route
             path="/shop/:id"
             render={routeProps => (
-              <ShowPage {...routeProps} testData={this.state.testData} />
+              <ShowPage {...routeProps} data={this.state.data} />
             )}
           />
         </Switch>

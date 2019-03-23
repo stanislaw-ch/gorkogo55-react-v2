@@ -29,7 +29,7 @@ class SearchPage extends Component {
   render() {
     const { isLoading } = this.state;
 
-    let requiredShops = this.props.testData
+    let requiredShops = this.props.data
       .filter(item =>
         item.title.toLowerCase().includes(this.props.searchValue.toLowerCase())
       )

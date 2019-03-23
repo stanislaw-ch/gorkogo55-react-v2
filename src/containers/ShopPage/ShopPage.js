@@ -18,9 +18,12 @@ class ShopPage extends Component {
   };
 
   renderShop = () => {
-    const selectedShop = this.props.testData.filter(
-      shop => shop.number === +this.props.match.params.id
+    console.log(this.props.match.params.id);
+
+    const selectedShop = this.props.data.filter(
+      shop => shop.number == this.props.match.params.id
     );
+    
     const shop = selectedShop[0];
     const shopComponent = (
       <Card>

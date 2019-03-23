@@ -25,7 +25,7 @@ class App extends Component {
     Tabletop.init({
       key: spreadSheetKey,
       callback: googleData => {
-        console.log('google sheet data --->', googleData);
+        // console.log('google sheet data --->', googleData);
         this.setState({data: googleData});
       },
       simpleSheet: true

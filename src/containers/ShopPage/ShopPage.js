@@ -56,7 +56,7 @@ class ShopPage extends Component {
               <Nav.Link href={shop.website}>Веб-сайт</Nav.Link>
             </Card.Text>
           ) : null}
-          {shop.route & (shop.route !== "-") ? (
+          {shop.route && shop.route !== "-" ? (
             <Card.Text>Можно найти: {shop.route}</Card.Text>
           ) : null}
         </Card.Body>

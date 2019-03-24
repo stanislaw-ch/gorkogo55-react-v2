@@ -2,6 +2,8 @@ import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import Nav from "react-bootstrap/Nav";
+import Button from "react-bootstrap/Button";
+import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 
 import { capitalizeFirstLetter } from "../../components/Shop/Shop";
 import Spinner from "../../components/Spinner/Spinner";
@@ -70,7 +72,16 @@ class ShopPage extends Component {
   render() {
     const { isLoading } = this.state;
     const content = isLoading ? <Spinner /> : this.renderShop();
-    return <Container style={{ padding: "20px" }}>{content}</Container>;
+    return (
+      <Container style={{ padding: "20px" }}>
+        <ButtonToolbar style={{ paddingBottom: "10%" }}>
+          <Button href="/search" variant="primary" size="lg" block>
+            Искать ещё
+          </Button>
+        </ButtonToolbar>
+        {content}
+      </Container>
+    );
   }
 }
 

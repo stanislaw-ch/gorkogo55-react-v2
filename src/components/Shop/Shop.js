@@ -14,13 +14,13 @@ const Shop = props => {
       <h6>
         {number}. {capitalizeFirstLetter(title)}
       </h6>
-      {description && keywords ? (
+      {description && description !== "-" && (keywords && keywords !== "-") ? (
         <p>
           {description}. <i>{keywords}</i>
         </p>
-      ) : description ? (
+      ) : description && description !== "-" ? (
         <p>{description}</p>
-      ) : keywords ? (
+      ) : keywords && keywords !== "-" ? (
         <p>Ключевые слова: {keywords}</p>
       ) : null}
     </ListGroup.Item>

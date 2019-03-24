@@ -18,11 +18,14 @@ class ShopPage extends Component {
   };
 
   renderShop = () => {
-    const selectedShop = this.props.testData.filter(
-      shop => shop.number === +this.props.match.params.id
+    console.log(this.props.match.params.id);
+
+    const selectedShop = this.props.data.filter(
+      shop => shop.number == this.props.match.params.id
     );
+    
     const shop = selectedShop[0];
-    const shopComponent = (
+    const shopComponent = shop ? (
       <Card>
         <Card.Body>
           <Card.Title>
@@ -36,7 +39,11 @@ class ShopPage extends Component {
           ) : null}
         </Card.Body>
       </Card>
-    );
+    ) : (
+      <p>
+        Ищем информацию...
+      </p>
+    )
     return shopComponent;
   };
 

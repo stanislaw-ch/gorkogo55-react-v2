@@ -6,7 +6,9 @@
     "keywords": "букет, розы, ромашки",
     "phone": "12345678",
     "vk": null,
-    "instagram": "rose12345"
+    "instagram": "rose12345",
+    "website": null,
+    "image": null
   },
   {
     "number": 216,
@@ -15,7 +17,9 @@
     "keywords": null,
     "phone": "697966",
     "vk": null,
-    "instagram": "@vadimcpp"
+    "instagram": "@vadimcpp",
+    "website": null,
+    "image": null
   },
   {
     "number": 40,
@@ -24,6 +28,8 @@
     "keywords": "нотбук, монитор, принтер",
     "phone": null,
     "vk": "vadimcpp",
-    "instagram": null
+    "instagram": null,
+    "website": null,
+    "image": null
   }
 ]

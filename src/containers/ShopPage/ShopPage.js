@@ -24,7 +24,6 @@ class ShopPage extends Component {
     );
 
     const shop = selectedShop[0];
-    console.log(shop);
     const shopComponent = shop ? (
       <Card>
         <Card.Body>

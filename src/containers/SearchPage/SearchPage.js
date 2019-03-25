@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import ListGroup from "react-bootstrap/ListGroup";
-
 import uniqueId from "lodash/uniqueId";
 
 import SearchForm from "../../components/SearchForm/SearchForm";
@@ -45,7 +44,9 @@ class SearchPage extends Component {
           />
         );
       });
-
+    if (requiredShops.length === 0 && this.props.searchValue !== "") {
+      requiredShops = <p>Ничего не найдено...</p>;
+    }
     return (
       <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
         <SearchForm

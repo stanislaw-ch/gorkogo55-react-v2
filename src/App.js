@@ -18,7 +18,8 @@ const spreadSheetKey = "1rg0Wkb4E1MccFnNJcasmn4uUwxNXDOs_ObeOC9MyYiM";
 class App extends Component {
   state = {
     searchValue: "",
-    data: []
+    data: [],
+    isLoading: true
   };
 
   componentDidMount() {
@@ -26,7 +27,7 @@ class App extends Component {
       key: spreadSheetKey,
       callback: googleData => {
         // console.log('google sheet data --->', googleData);
-        this.setState({ data: googleData });
+        this.setState({ data: googleData, isLoading: false });
       },
       simpleSheet: true
     });
@@ -51,6 +52,7 @@ class App extends Component {
             render={routeProps => (
               <MainPage
                 {...routeProps}
+                isLoading={this.state.isLoading}
                 searchValue={this.state.searchValue}
                 clearSearchValue={this.clearSearchValue}
                 changeSearchValue={this.changeSearchValue}

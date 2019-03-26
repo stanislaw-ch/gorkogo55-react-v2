@@ -21,6 +21,10 @@ class ShopPage extends Component {
     this.setState({ isLoading: false });
   };
 
+  goSearchPage = () => {
+    this.props.history.push(`/search`);
+  };
+
   renderShop = () => {
     const selectedShop = this.props.data.filter(
       shop => shop.number === this.props.match.params.id
@@ -73,9 +77,9 @@ class ShopPage extends Component {
     const { isLoading } = this.state;
     const content = isLoading ? <Spinner /> : this.renderShop();
     return (
-      <Container style={{ padding: "20px" }}>
+      <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
         <ButtonToolbar style={{ paddingBottom: "10%" }}>
-          <Button href="/search" variant="primary" size="lg" block>
+          <Button onClick={this.goSearchPage} variant="primary" size="lg" block>
             Искать ещё
           </Button>
         </ButtonToolbar>

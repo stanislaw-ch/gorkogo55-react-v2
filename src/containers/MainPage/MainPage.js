@@ -21,12 +21,16 @@ export default class MainPage extends Component {
           Введите в поисковое поле номер телефона, название магазина, или товар
           который вы хотите приобрести
         </p>
-        <SearchForm
-          {...this.props}
-          onSearchForm={this.onSearchForm}
-          searchValue={this.props.searchValue}
-          changeSearchValue={this.props.changeSearchValue}
-        />
+        {this.props.isLoading ? (
+          <p> Загрузка данных ...</p>
+        ) : (
+          <SearchForm
+            {...this.props}
+            onSearchForm={this.onSearchForm}
+            searchValue={this.props.searchValue}
+            changeSearchValue={this.props.changeSearchValue}
+          />
+        )}
       </div>
     );
   }

@@ -47,6 +47,13 @@ class SearchPage extends Component {
     if (requiredShops.length === 0 && this.props.searchValue !== "") {
       requiredShops = <p>Ничего не найдено...</p>;
     }
+    if (this.props.isLoadingData) {
+      return (
+        <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
+          <p>Загрузка данных ...</p>
+        </Container>
+      );
+    }
     return (
       <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
         <SearchForm

@@ -64,6 +64,7 @@ class App extends Component {
             render={routeProps => (
               <SearchPage
                 {...routeProps}
+                isLoadingData={this.state.isLoading}
                 changeSearchValue={this.changeSearchValue}
                 data={this.state.data}
                 searchValue={this.state.searchValue}

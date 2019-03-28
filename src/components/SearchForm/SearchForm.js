@@ -9,7 +9,9 @@ const searchForm = props => {
   const { onSearchForm, searchValue, changeSearchValue, location } = props;
 
   return (
-    <Container>
+    <Container
+      style={location.pathname !== "/search" ? { height: "15vh" } : null}
+    >
       <Row>
         <Col>
           <Form.Control

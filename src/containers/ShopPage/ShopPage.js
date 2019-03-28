@@ -9,18 +9,6 @@ import { capitalizeFirstLetter } from "../../components/Shop/Shop";
 import Spinner from "../../components/Spinner/Spinner";
 
 class ShopPage extends Component {
-  state = {
-    isLoading: true
-  };
-
-  componentDidMount() {
-    setTimeout(this.finishLoading, 500);
-  }
-
-  finishLoading = () => {
-    this.setState({ isLoading: false });
-  };
-
   goSearchPage = () => {
     this.props.history.push(`/search`);
   };
@@ -74,15 +62,14 @@ class ShopPage extends Component {
   };
 
   render() {
-    const { isLoading } = this.state;
     if (this.props.isLoadingData) {
       return (
         <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
           <p>Загрузка данных ...</p>
+          <Spinner />
         </Container>
       );
     }
-    const content = isLoading ? <Spinner /> : this.renderShop();
     return (
       <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
         <ButtonToolbar style={{ paddingBottom: "10%" }}>
@@ -90,7 +77,7 @@ class ShopPage extends Component {
             Искать ещё
           </Button>
         </ButtonToolbar>
-        {content}
+        {this.renderShop()}
       </Container>
     );
   }

@@ -9,9 +9,9 @@ import Spinner from "../../components/Spinner/Spinner";
 import "./SearchPage.css";
 
 class SearchPage extends Component {
-  state = {
-    isLoading: true
-  };
+  // state = {
+  //   isLoading: true
+  // };
 
   componentDidMount() {
     setTimeout(this.finishLoading, 500);
@@ -26,8 +26,6 @@ class SearchPage extends Component {
   };
 
   render() {
-    const { isLoading } = this.state;
-
     let requiredShops = this.props.data
       .filter(item =>
         item.title.toLowerCase().includes(this.props.searchValue.toLowerCase())
@@ -51,6 +49,7 @@ class SearchPage extends Component {
       return (
         <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
           <p>Загрузка данных ...</p>
+          <Spinner />
         </Container>
       );
     }
@@ -61,13 +60,9 @@ class SearchPage extends Component {
           searchValue={this.props.searchValue}
           changeSearchValue={this.props.changeSearchValue}
         />
-        {isLoading ? (
-          <Spinner />
-        ) : (
-          <ListGroup style={{ padding: "2vh", paddingTop: "5vh" }}>
-            {requiredShops}
-          </ListGroup>
-        )}
+        <ListGroup style={{ padding: "2vh", paddingTop: "5vh" }}>
+          {requiredShops}
+        </ListGroup>
       </Container>
     );
   }

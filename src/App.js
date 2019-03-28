@@ -52,7 +52,7 @@ class App extends Component {
             render={routeProps => (
               <MainPage
                 {...routeProps}
-                isLoading={this.state.isLoading}
+                isLoadingData={this.state.isLoading}
                 searchValue={this.state.searchValue}
                 clearSearchValue={this.clearSearchValue}
                 changeSearchValue={this.changeSearchValue}

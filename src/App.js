@@ -74,7 +74,11 @@ class App extends Component {
           <Route
             path="/shop/:id"
             render={routeProps => (
-              <ShowPage {...routeProps} data={this.state.data} />
+              <ShowPage
+                {...routeProps}
+                data={this.state.data}
+                isLoadingData={this.state.isLoading}
+              />
             )}
           />
         </Switch>

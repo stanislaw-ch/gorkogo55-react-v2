@@ -75,6 +75,13 @@ class ShopPage extends Component {
 
   render() {
     const { isLoading } = this.state;
+    if (this.props.isLoadingData) {
+      return (
+        <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
+          <p>Загрузка данных ...</p>
+        </Container>
+      );
+    }
     const content = isLoading ? <Spinner /> : this.renderShop();
     return (
       <Container style={{ padding: "3vh", paddingTop: "7vh" }}>

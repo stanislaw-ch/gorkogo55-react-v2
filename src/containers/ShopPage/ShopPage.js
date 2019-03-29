@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
-import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 
@@ -34,22 +33,31 @@ class ShopPage extends Component {
           ) : null}
           {shop.phone && shop.phone !== "-" ? (
             <Card.Text>
-              <Button href={`tel:${shop.phone}`}>Позвонить</Button>
+              <p>Телефон: {shop.phone}</p>
+              <Button href={`tel:${shop.phone}`} variant="success">
+                Позвонить
+              </Button>
             </Card.Text>
           ) : null}
           {shop.vk && shop.vk !== "-" ? (
             <Card.Text>
-              <Nav.Link href={shop.vk}>Вконтакте</Nav.Link>
+              <Button href={shop.vk} variant="info">
+                Вконтакте
+              </Button>
             </Card.Text>
           ) : null}
           {shop.instagram && shop.instagram !== "-" ? (
             <Card.Text>
-              <Nav.Link href={shop.instagram}>Instagram</Nav.Link>
+              <Button variant="danger" href={shop.instagram}>
+                Instagram
+              </Button>
             </Card.Text>
           ) : null}
           {shop.website && shop.website !== "-" ? (
             <Card.Text>
-              <Nav.Link href={shop.website}>Веб-сайт</Nav.Link>
+              <Button href={shop.website} variant="outline-secondary">
+                Cайт
+              </Button>
             </Card.Text>
           ) : null}
           {shop.route && shop.route !== "-" ? (

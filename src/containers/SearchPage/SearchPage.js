@@ -36,6 +36,9 @@ class SearchPage extends Component {
       item.title.toLowerCase().includes(this.props.searchValue.toLowerCase()) ||
       item.keywords
         .toLowerCase()
+        .includes(this.props.searchValue.toLowerCase()) ||
+      item.description
+        .toLowerCase()
         .includes(this.props.searchValue.toLowerCase());
 
     return result;

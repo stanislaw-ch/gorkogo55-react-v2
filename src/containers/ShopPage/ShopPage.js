@@ -30,7 +30,7 @@ class ShopPage extends Component {
             <Card.Text>{shop.description}</Card.Text>
           ) : null}
           {shop.keywords && shop.keywords !== "-" ? (
-            <Card.Text>{shop.keywords}</Card.Text>
+            <Card.Text>Ключевые слова: {shop.keywords}</Card.Text>
           ) : null}
           {shop.phone && shop.phone !== "-" ? (
             <Card.Text>Телефон: {shop.phone}</Card.Text>

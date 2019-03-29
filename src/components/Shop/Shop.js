@@ -16,10 +16,11 @@ const Shop = props => {
       </h6>
       {description && description !== "-" && (keywords && keywords !== "-") ? (
         <p>
-          {description}. <i>{keywords}</i>
+          {capitalizeFirstLetter(description)}.{" "}
+          <i>Ключевые слова: {keywords}</i>
         </p>
       ) : description && description !== "-" ? (
-        <p>{description}</p>
+        <p>{capitalizeFirstLetter(description)}</p>
       ) : keywords && keywords !== "-" ? (
         <p>Ключевые слова: {keywords}</p>
       ) : null}

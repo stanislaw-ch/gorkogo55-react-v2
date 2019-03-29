@@ -28,30 +28,32 @@ class SearchPage extends Component {
   /**
    * This method implements data filtering.
    */
-  filterData = (item) => {
+  filterData = item => {
     let result;
 
     // TODO: Update search algorithm here and delete this message!
-    result = item.title.toLowerCase().includes(this.props.searchValue.toLowerCase());
+    result =
+      item.title.toLowerCase().includes(this.props.searchValue.toLowerCase()) ||
+      item.keywords
+        .toLowerCase()
+        .includes(this.props.searchValue.toLowerCase());
 
     return result;
   };
 
   render() {
-    let requiredShops = this.props.data
-      .filter(this.filterData)
-      .map(item => {
-        return (
-          <Shop
-            onSelectShop={this.selectShop}
-            key={uniqueId()}
-            number={item.number}
-            title={item.title}
-            description={item.description}
-            keywords={item.keywords}
-          />
-        );
-      });
+    let requiredShops = this.props.data.filter(this.filterData).map(item => {
+      return (
+        <Shop
+          onSelectShop={this.selectShop}
+          key={uniqueId()}
+          number={item.number}
+          title={item.title}
+          description={item.description}
+          keywords={item.keywords}
+        />
+      );
+    });
     if (requiredShops.length === 0 && this.props.searchValue !== "") {
       requiredShops = <p>Ничего не найдено...</p>;
     }

@@ -25,11 +25,21 @@ class SearchPage extends Component {
     this.props.history.push(`/shop/${id}`);
   };
 
+  /**
+   * This method implements data filtering.
+   */
+  filterData = (item) => {
+    let result;
+
+    // TODO: Update search algorithm here and delete this message!
+    result = item.title.toLowerCase().includes(this.props.searchValue.toLowerCase());
+
+    return result;
+  };
+
   render() {
     let requiredShops = this.props.data
-      .filter(item =>
-        item.title.toLowerCase().includes(this.props.searchValue.toLowerCase())
-      )
+      .filter(this.filterData)
       .map(item => {
         return (
           <Shop

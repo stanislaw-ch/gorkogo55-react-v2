@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import ListGroup from "react-bootstrap/ListGroup";
+import Button from "react-bootstrap/Button";
+import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import uniqueId from "lodash/uniqueId";
 
 import SearchForm from "../../components/SearchForm/SearchForm";
@@ -12,6 +14,10 @@ class SearchPage extends Component {
   // state = {
   //   isLoading: true
   // };
+
+  goMainPage = () => {
+    this.props.history.push(`/`);
+  };
 
   componentDidMount() {
     setTimeout(this.finishLoading, 500);
@@ -70,6 +76,11 @@ class SearchPage extends Component {
     }
     return (
       <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
+        <ButtonToolbar style={{ padding: "2vh" }}>
+          <Button onClick={this.goMainPage} variant="primary" block>
+            Горького 55
+          </Button>
+        </ButtonToolbar>
         <SearchForm
           {...this.props}
           searchValue={this.props.searchValue}

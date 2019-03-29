@@ -33,7 +33,9 @@ class ShopPage extends Component {
             <Card.Text>Ключевые слова: {shop.keywords}</Card.Text>
           ) : null}
           {shop.phone && shop.phone !== "-" ? (
-            <Card.Text>Телефон: {shop.phone}</Card.Text>
+            <Card.Text>
+              <Button href={`tel:${shop.phone}`}>Позвонить</Button>
+            </Card.Text>
           ) : null}
           {shop.vk && shop.vk !== "-" ? (
             <Card.Text>

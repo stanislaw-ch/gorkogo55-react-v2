@@ -34,7 +34,7 @@ class SearchPage extends Component {
     const { isLoading } = this.state;
 
     let requiredShops = this.props.data
-      .filter((item) => this.filterData(item))
+      .filter(this.filterData)
       .map(item => {
         return (
           <Shop

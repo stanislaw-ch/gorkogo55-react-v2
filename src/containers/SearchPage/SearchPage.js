@@ -26,13 +26,15 @@ class SearchPage extends Component {
     this.props.history.push(`/shop/${id}`);
   };
 
+  filterData = (item) => {
+    return item.title.toLowerCase().includes(this.props.searchValue.toLowerCase());
+  };
+
   render() {
     const { isLoading } = this.state;
 
     let requiredShops = this.props.data
-      .filter(item =>
-        item.title.toLowerCase().includes(this.props.searchValue.toLowerCase())
-      )
+      .filter((item) => this.filterData(item))
       .map(item => {
         return (
           <Shop

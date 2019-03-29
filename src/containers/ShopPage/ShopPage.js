@@ -61,7 +61,7 @@ class ShopPage extends Component {
             </Card.Text>
           ) : null}
           {shop.route && shop.route !== "-" ? (
-            <Card.Text>Можно найти: {shop.route}</Card.Text>
+            <Card.Text>Как пройти: {shop.route}</Card.Text>
           ) : null}
         </Card.Body>
       </Card>

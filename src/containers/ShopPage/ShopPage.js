@@ -3,6 +3,7 @@ import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
+import { FaPhone } from "react-icons/fa";
 
 import { capitalizeFirstLetter } from "../../components/Shop/Shop";
 import Spinner from "../../components/Spinner/Spinner";
@@ -34,8 +35,8 @@ class ShopPage extends Component {
           {shop.phone && shop.phone !== "-" ? (
             <Card.Text>
               <p>Телефон: {shop.phone}</p>
-              <Button href={`tel:${shop.phone}`} variant="success">
-                Позвонить
+              <Button href={`tel:${shop.phone}`} variant="success" size="lg">
+                <FaPhone />
               </Button>
             </Card.Text>
           ) : null}

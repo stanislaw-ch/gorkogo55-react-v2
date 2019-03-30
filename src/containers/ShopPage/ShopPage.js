@@ -3,7 +3,8 @@ import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
-import { FaPhone, FaVk, FaInstagram } from "react-icons/fa";
+import { FaVk, FaInstagram } from "react-icons/fa";
+import { MdPhoneForwarded } from "react-icons/md";
 
 import { capitalizeFirstLetter } from "../../components/Shop/Shop";
 import Spinner from "../../components/Spinner/Spinner";
@@ -36,21 +37,21 @@ class ShopPage extends Component {
             <Card.Text>
               <p>Телефон: {shop.phone}</p>
               <Button href={`tel:${shop.phone}`} variant="success">
-                Позвонить <FaPhone />
+                <MdPhoneForwarded /> Позвонить
               </Button>
             </Card.Text>
           ) : null}
           {shop.vk && shop.vk !== "-" ? (
             <Card.Text>
               <Button href={shop.vk} variant="link">
-                Вконтакте <FaVk />
+                <FaVk /> Вконтакте
               </Button>
             </Card.Text>
           ) : null}
           {shop.instagram && shop.instagram !== "-" ? (
             <Card.Text>
               <Button variant="link" href={shop.instagram}>
-                Instagram <FaInstagram />
+                <FaInstagram /> Instagram
               </Button>
             </Card.Text>
           ) : null}

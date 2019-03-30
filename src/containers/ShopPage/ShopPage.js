@@ -3,7 +3,7 @@ import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
-import { FaPhone } from "react-icons/fa";
+import { FaPhone, FaVk, FaInstagram } from "react-icons/fa";
 
 import { capitalizeFirstLetter } from "../../components/Shop/Shop";
 import Spinner from "../../components/Spinner/Spinner";
@@ -42,21 +42,21 @@ class ShopPage extends Component {
           ) : null}
           {shop.vk && shop.vk !== "-" ? (
             <Card.Text>
-              <Button href={shop.vk} variant="info">
-                Вконтакте
+              <Button href={shop.vk} variant="link">
+                Вконтакте <FaVk />
               </Button>
             </Card.Text>
           ) : null}
           {shop.instagram && shop.instagram !== "-" ? (
             <Card.Text>
-              <Button variant="danger" href={shop.instagram}>
-                Instagram
+              <Button variant="link" href={shop.instagram}>
+                Instagram <FaInstagram />
               </Button>
             </Card.Text>
           ) : null}
           {shop.website && shop.website !== "-" ? (
             <Card.Text>
-              <Button href={shop.website} variant="outline-secondary">
+              <Button href={shop.website} variant="link">
                 Cайт
               </Button>
             </Card.Text>

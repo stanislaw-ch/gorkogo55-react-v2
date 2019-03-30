@@ -35,8 +35,8 @@ class ShopPage extends Component {
           {shop.phone && shop.phone !== "-" ? (
             <Card.Text>
               <p>Телефон: {shop.phone}</p>
-              <Button href={`tel:${shop.phone}`} variant="success" size="lg">
-                <FaPhone />
+              <Button href={`tel:${shop.phone}`} variant="success">
+                Позвонить <FaPhone />
               </Button>
             </Card.Text>
           ) : null}

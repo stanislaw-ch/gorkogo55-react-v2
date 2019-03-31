@@ -4,6 +4,7 @@ import { FaVk, FaInstagram } from "react-icons/fa";
 import { MdPhoneForwarded } from "react-icons/md";
 
 import { capitalizeFirstLetter } from "../../components/Shop/Shop";
+import Header from "../../components/Header/Header";
 import Spinner from "../../components/Spinner/Spinner";
 
 class ShopPage extends Component {
@@ -80,14 +81,12 @@ class ShopPage extends Component {
       );
     }
     return (
-      <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
-        <ButtonToolbar style={{ paddingBottom: "10%" }}>
-          <Button onClick={this.goSearchPage} variant="primary" size="lg" block>
-            Искать ещё
-          </Button>
-        </ButtonToolbar>
-        {this.renderShop()}
-      </Container>
+      <>
+        <Header onPressBack={this.goSearchPage} title="Горького 55" />
+        <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
+          {this.renderShop()}
+        </Container>
+      </>
     );
   }
 }

@@ -9,20 +9,8 @@ import Spinner from "../../components/Spinner/Spinner";
 import "./SearchPage.css";
 
 class SearchPage extends Component {
-  // state = {
-  //   isLoading: true
-  // };
-
   goMainPage = () => {
     this.props.history.push(`/`);
-  };
-
-  componentDidMount() {
-    setTimeout(this.finishLoading, 500);
-  }
-
-  finishLoading = () => {
-    this.setState({ isLoading: false });
   };
 
   selectShop = id => {

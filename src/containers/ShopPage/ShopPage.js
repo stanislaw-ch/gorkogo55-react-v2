@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Container, Card, Button, ButtonToolbar } from "react-bootstrap";
+import { Container, Card, Button } from "react-bootstrap";
 import { FaVk, FaInstagram } from "react-icons/fa";
 import { MdPhoneForwarded } from "react-icons/md";
 

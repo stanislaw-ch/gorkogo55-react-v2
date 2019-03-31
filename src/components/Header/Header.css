@@ -1,0 +1,11 @@
+.Nav {
+  display: flex;
+  width: 95vw;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.NavTitle {
+  flex-grow: 4;
+  margin-right: 12%;
+}

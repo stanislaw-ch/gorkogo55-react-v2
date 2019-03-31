@@ -1,0 +1,26 @@
+import React from "react";
+import { Navbar, Nav, Button } from "react-bootstrap";
+import { IoIosArrowBack } from "react-icons/io";
+
+import "./Header.css";
+
+const header = props => {
+  return (
+    <Navbar bg="dark" variant="dark">
+      <div className="Nav">
+        <div className="ButtonBack">
+          <Button>
+            <IoIosArrowBack onClick={props.onPressBack} />
+          </Button>
+        </div>
+        <div className="NavTitle">
+          <Nav.Link eventKey="disabled" disabled>
+            {props.title ? props.title : "Title"}
+          </Nav.Link>
+        </div>
+      </div>
+    </Navbar>
+  );
+};
+
+export default header;

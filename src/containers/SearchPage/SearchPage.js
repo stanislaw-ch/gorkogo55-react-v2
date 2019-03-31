@@ -5,6 +5,7 @@ import Button from "react-bootstrap/Button";
 import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import uniqueId from "lodash/uniqueId";
 
+import Header from "../../components/Header/Header";
 import SearchForm from "../../components/SearchForm/SearchForm";
 import Shop from "../../components/Shop/Shop";
 import Spinner from "../../components/Spinner/Spinner";
@@ -75,21 +76,24 @@ class SearchPage extends Component {
       );
     }
     return (
-      <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
-        <ButtonToolbar style={{ padding: "2vh" }}>
-          <Button onClick={this.goMainPage} variant="primary" block>
-            Горького 55
-          </Button>
-        </ButtonToolbar>
-        <SearchForm
-          {...this.props}
-          searchValue={this.props.searchValue}
-          changeSearchValue={this.props.changeSearchValue}
-        />
-        <ListGroup style={{ padding: "2vh", paddingTop: "5vh" }}>
-          {requiredShops}
-        </ListGroup>
-      </Container>
+      <>
+        <Header title={"Горького55"} onPressBack={this.goMainPage} />
+        <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
+          <ButtonToolbar style={{ padding: "2vh" }}>
+            <Button onClick={this.goMainPage} variant="primary" block>
+              Горького 55
+            </Button>
+          </ButtonToolbar>
+          <SearchForm
+            {...this.props}
+            searchValue={this.props.searchValue}
+            changeSearchValue={this.props.changeSearchValue}
+          />
+          <ListGroup style={{ padding: "2vh", paddingTop: "5vh" }}>
+            {requiredShops}
+          </ListGroup>
+        </Container>
+      </>
     );
   }
 }

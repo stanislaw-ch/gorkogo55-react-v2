@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import Container from "react-bootstrap/Container";
-import ListGroup from "react-bootstrap/ListGroup";
+import { Container, ListGroup } from "react-bootstrap";
 import uniqueId from "lodash/uniqueId";
 
 import Header from "../../components/Header/Header";

@@ -1,8 +1,6 @@
 import React, { Component } from "react";
 import Container from "react-bootstrap/Container";
 import ListGroup from "react-bootstrap/ListGroup";
-import Button from "react-bootstrap/Button";
-import ButtonToolbar from "react-bootstrap/ButtonToolbar";
 import uniqueId from "lodash/uniqueId";
 
 import Header from "../../components/Header/Header";
@@ -79,11 +77,6 @@ class SearchPage extends Component {
       <>
         <Header title={"Горького55"} onPressBack={this.goMainPage} />
         <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
-          <ButtonToolbar style={{ padding: "2vh" }}>
-            <Button onClick={this.goMainPage} variant="primary" block>
-              Горького 55
-            </Button>
-          </ButtonToolbar>
           <SearchForm
             {...this.props}
             searchValue={this.props.searchValue}

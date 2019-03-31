@@ -6,7 +6,7 @@ import "./Header.css";
 
 const header = props => {
   return (
-    <Navbar bg="dark" variant="dark">
+    <Navbar bg="dark" variant="dark" style={{ paddingRight: "15px" }}>
       <div className="Nav">
         <div className="ButtonBack">
           <Button>
@@ -18,6 +18,7 @@ const header = props => {
             {props.title ? props.title : "Title"}
           </Nav.Link>
         </div>
+        <div style={{ width: "42px", margin: "0" }} />
       </div>
     </Navbar>
   );

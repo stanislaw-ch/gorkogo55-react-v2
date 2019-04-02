@@ -28,9 +28,11 @@ export default class MainPage extends Component {
             <Spinner />
           </Container>
         ) : (
-          <Button variant="primary" size="lg" onClick={this.onSearchForm}>
-            Приступить к поиску
-          </Button>
+          <div style={{ height: "15vh" }}>
+            <Button variant="primary" size="lg" onClick={this.onSearchForm}>
+              Приступить к поиску
+            </Button>
+          </div>
         )}
       </div>
     );

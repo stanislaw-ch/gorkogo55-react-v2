@@ -1,8 +1,7 @@
 import React, { Component } from "react";
-import Container from "react-bootstrap/Container";
+import { Container, Button } from "react-bootstrap";
 
 import Spinner from "../../components/Spinner/Spinner";
-import SearchForm from "../../components/SearchForm/SearchForm";
 import "./MainPage.css";
 
 export default class MainPage extends Component {
@@ -29,12 +28,9 @@ export default class MainPage extends Component {
             <Spinner />
           </Container>
         ) : (
-          <SearchForm
-            {...this.props}
-            onSearchForm={this.onSearchForm}
-            searchValue={this.props.searchValue}
-            changeSearchValue={this.props.changeSearchValue}
-          />
+          <Button variant="primary" size="lg" onClick={this.onSearchForm}>
+            Приступить к поиску
+          </Button>
         )}
       </div>
     );

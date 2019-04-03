@@ -4,7 +4,8 @@ import uniqueId from "lodash/uniqueId";
 
 import Header from "../../components/Header/Header";
 import SearchForm from "../../components/SearchForm/SearchForm";
-import Shop from "../../components/Shop/Shop";
+import ShopInList from "../../components/Shop/ShopInList";
+import ShopFull from "../../components/Shop/ShopFull";
 import Spinner from "../../components/Spinner/Spinner";
 import "./SearchPage.css";
 
@@ -37,9 +38,11 @@ class SearchPage extends Component {
   };
 
   render() {
-    let requiredShops = this.props.data.filter(this.filterData).map(item => {
+    let ba = this.props.data.filter(this.filterData);
+    let requiredShops = [];
+    requiredShops = ba.map(item => {
       return (
-        <Shop
+        <ShopInList
           onSelectShop={this.selectShop}
           key={uniqueId()}
           number={item.number}
@@ -49,6 +52,24 @@ class SearchPage extends Component {
         />
       );
     });
+    if (requiredShops.length === 1) {
+      requiredShops = ba.map(shop => {
+        return (
+          <ShopFull
+            key={uniqueId()}
+            number={shop.number}
+            title={shop.title}
+            description={shop.description}
+            keywords={shop.keywords}
+            phone={shop.phone}
+            vk={shop.vk}
+            instagram={shop.instagram}
+            website={shop.website}
+            route={shop.route}
+          />
+        );
+      });
+    }
     if (requiredShops.length === 0 && this.props.searchValue !== "") {
       requiredShops = <p>Ничего не найдено...</p>;
     }

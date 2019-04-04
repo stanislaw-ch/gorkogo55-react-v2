@@ -11,12 +11,14 @@ body {
   align-items: center;
   padding: 0;
   margin: 0;
+  background-color: #ff00000e;
 }
 
 .headerPicture {
   width: 100%;
   top: 0;
   left: 0;
+  border-bottom: 2px solid lightgray;
 }
 
 .content {  

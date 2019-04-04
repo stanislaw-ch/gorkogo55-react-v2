@@ -3,11 +3,42 @@ body {
 }
 
 .MainPage {
-  height: 90vh;
-  display: flex;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: flex-start;
   align-items: center;
-  padding: 5%;
+  padding-bottom: 50px;
+  margin: 0;
+  background-color: #ff00000e;
+  border-bottom: 2px solid lightgray;
+}
+
+.header {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: rgb(254, 255, 206);
+  border-bottom: 2px solid rgb(173, 25, 25);
+}
+
+.headerPicture {
+  width: 100%;    
+}
+
+.content {  
+  padding: 20px;
+}
+
+.message {
+  padding-bottom: 30px;
+}
+
+.welcome {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.wanna-help {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }

@@ -45,6 +45,7 @@ export default class MainPage extends Component {
               <p className="wanna-help">
                 Помогите сделать поиск лучше - добавьте недостающую информацию и мы ее опубликуем!
               </p>
+              <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdTOMQFz4SAghmm7_gPhKjsJcYZKvxEOp3kPA6MsNOhLy1TGQ/viewform?embedded=true" width="100%" height="1000" frameborder="0" marginheight="0" marginwidth="0">Loading...</iframe>
             </div>
           )}
         </div>

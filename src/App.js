@@ -96,7 +96,7 @@ class App extends Component {
               }}
               alt="Яндекс.Метрика"
               title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)"
-              class="ym-advanced-informer"
+              className="ym-advanced-informer"
               data-cid="53046907"
               data-lang="ru" 
             />

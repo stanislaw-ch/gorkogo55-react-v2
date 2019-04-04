@@ -3,6 +3,8 @@ import { Container, Button } from "react-bootstrap";
 
 import Spinner from "../../components/Spinner/Spinner";
 import "./MainPage.css";
+import headerPicture from '../../assets/images/dve_pyaterki.jpg';
+
 
 export default class MainPage extends Component {
   onSearchForm = () => {
@@ -16,6 +18,13 @@ export default class MainPage extends Component {
   render() {
     return (
       <div className="MainPage">
+        {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
+        <img
+          src={headerPicture}
+          alt="Header picture"
+          className="headerPicture"
+        />
+
         <h3>Добро пожаловать в ТЦ Горького 55!</h3>
         <p>
           Мы собрали на нашем сайте всю информацию о магазинах торгового центра.

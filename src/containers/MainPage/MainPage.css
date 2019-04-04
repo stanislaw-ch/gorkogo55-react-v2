@@ -3,22 +3,26 @@ body {
 }
 
 .MainPage {
-  height: 90vh;
-  display: flex;
+  min-height: 90vh;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  padding: 0;
+  padding-bottom: 50px;
   margin: 0;
   background-color: #ff00000e;
+  border-bottom: 2px solid lightgray;
+}
+
+.header {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: rgb(254, 255, 206);
+  border-bottom: 2px solid rgb(173, 25, 25);
 }
 
 .headerPicture {
-  width: 100%;
-  top: 0;
-  left: 0;
-  border-bottom: 2px solid lightgray;
+  width: 100%;    
 }
 
 .content {  
@@ -26,17 +30,15 @@ body {
 }
 
 .message {
-  padding-bottom: 50px;
+  padding-bottom: 30px;
 }
 
 .welcome {
   padding-top: 30px;
-  padding-bottom: 10px;
+  padding-bottom: 30px;
 }
 
-.address {
-  font-style: italic;
-  text-align: right;
-  width: 100%;
-  padding-bottom: 50px;
+.wanna-help {
+  padding-top: 30px;
+  padding-bottom: 30px;
 }

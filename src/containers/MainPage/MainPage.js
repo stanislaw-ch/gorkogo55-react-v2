@@ -18,30 +18,33 @@ export default class MainPage extends Component {
   render() {
     return (
       <div className="MainPage">
-        {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
-        <img
-          src={headerPicture}
-          alt="Header picture"
-          className="headerPicture"
-        />
+        <div className="header">
+          {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
+          <img
+            src={headerPicture}
+            alt="Header picture"
+            className="headerPicture"
+          />
+        </div>
         <div className="content">
-          <h2 className="welcome">Добро пожаловать <br /> в ТЦ «Две пятерки» <br /> </h2>
-          <h4 className="address"> ул. Горького, 55📍</h4>
+          <h3 className="welcome">Уважаемые посетители!</h3>
           <p className="message">
-            Мы собрали на нашем сайте всю информацию о магазинах торгового центра.
-            Введите в поисковое поле номер телефона, название магазина, или товар
-            который вы хотите приобрести
+            Добро пожаловать в торговый центр «Две пятерки». Мы собрали для Вас подробную информацию о магазинах,
+            товарах и услугах, которые вы можете получить на нашем сайте.
           </p>
           {this.props.isLoadingData ? (
-            <Container style={{ height: "15vh" }}>
+            <Container>
               <p> Загрузка данных ...</p>
               <Spinner />
             </Container>
           ) : (
-            <div style={{ height: "15vh" }}>
+            <div>
               <Button variant="primary" size="lg" onClick={this.onSearchForm}>
                 Приступить к поиску
               </Button>
+              <p className="wanna-help">
+                Помогите сделать поиск лучше - добавьте недостающую информацию и мы ее опубликуем!
+              </p>
             </div>
           )}
         </div>

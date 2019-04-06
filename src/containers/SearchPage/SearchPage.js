@@ -84,7 +84,10 @@ class SearchPage extends Component {
     return (
       <>
         <Header title={"Поиск"} onPressBack={this.goMainPage} />
-        <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
+        <Container
+          style={{ padding: "3vh", paddingTop: "7vh" }}
+          className="SearchPage"
+        >
           <SearchForm
             {...this.props}
             searchValue={this.props.searchValue}

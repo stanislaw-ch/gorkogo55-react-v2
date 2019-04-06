@@ -33,9 +33,11 @@ const shop = props => {
         {phone && phone !== "-" ? (
           <>
             <p>Телефон: {phone}</p>
-            <Button href={`tel:${phone}`} variant="success">
-              <MdPhoneForwarded /> Позвонить
-            </Button>
+            <Card.Text>
+              <Button href={`tel:${phone}`} variant="success">
+                <MdPhoneForwarded /> Позвонить
+              </Button>
+            </Card.Text>
           </>
         ) : null}
         {vk && vk !== "-" ? (

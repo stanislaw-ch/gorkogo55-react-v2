@@ -10,7 +10,11 @@ export const capitalizeFirstLetter = string => {
 const Shop = props => {
   const { number, title, description, keywords, onSelectShop } = props;
   return (
-    <ListGroup.Item className="Shop" onClick={() => onSelectShop(number)}>
+    <ListGroup.Item
+      className="Shop"
+      onClick={() => onSelectShop(number)}
+      action
+    >
       <h6>
         {number}. {capitalizeFirstLetter(title)}
       </h6>

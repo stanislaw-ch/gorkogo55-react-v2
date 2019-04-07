@@ -10,13 +10,13 @@ const shop = props => {
     number,
     title,
     description,
-    keywords,
     phone,
     vk,
     instagram,
     website,
     route
   } = props;
+  let keywords = props.keywords.split(", ");
   return (
     <Card>
       <Card.Body>
@@ -28,7 +28,11 @@ const shop = props => {
           <Card.Text>{description}</Card.Text>
         ) : null}
         {keywords && keywords !== "-" ? (
-          <Card.Text>Ключевые слова: {keywords}</Card.Text>
+          <Card.Text>
+            {keywords.map(kw => {
+              return <span>#{kw} </span>;
+            })}
+          </Card.Text>
         ) : null}
         {phone && phone !== "-" ? (
           <>

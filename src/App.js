@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import Tabletop from "tabletop";
 
 import MainPage from "./containers/MainPage/MainPage";
@@ -33,6 +33,11 @@ class App extends Component {
     });
   }
 
+  hashTagAddSearchValue = value => {
+    this.setState({ searchValue: value });
+    this.props.history.push(`/search`);
+  };
+
   changeSearchValue = event => {
     event.preventDefault();
     this.setState({ searchValue: event.target.value });
@@ -64,6 +69,7 @@ class App extends Component {
             render={routeProps => (
               <SearchPage
                 {...routeProps}
+                hashTageSearch={this.hashTagAddSearchValue}
                 isLoadingData={this.state.isLoading}
                 changeSearchValue={this.changeSearchValue}
                 data={this.state.data}
@@ -76,6 +82,7 @@ class App extends Component {
             render={routeProps => (
               <ShowPage
                 {...routeProps}
+                hashTageSearch={this.hashTagAddSearchValue}
                 data={this.state.data}
                 isLoadingData={this.state.isLoading}
               />
@@ -84,21 +91,23 @@ class App extends Component {
         </Switch>
         <footer>
           {/* Yandex.Metrika informer */}
-          <a href="https://metrika.yandex.ru/stat/?id=53046907&amp;from=informer"
+          <a
+            href="https://metrika.yandex.ru/stat/?id=53046907&amp;from=informer"
             target="_blank"
-            rel="nofollow">
-            <img 
+            rel="nofollow"
+          >
+            <img
               src="https://informer.yandex.ru/informer/53046907/3_1_FFFFFFFF_FFFFFFFF_0_pageviews"
               style={{
-                width: '88px',
-                height: '31px',
+                width: "88px",
+                height: "31px",
                 border: 0
               }}
               alt="Яндекс.Метрика"
               title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)"
               className="ym-advanced-informer"
               data-cid="53046907"
-              data-lang="ru" 
+              data-lang="ru"
             />
           </a>
           {/* /Yandex.Metrika informer */}
@@ -108,4 +117,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);

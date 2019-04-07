@@ -18,6 +18,7 @@ class ShopPage extends Component {
     const shop = selectedShop[0];
     const shopComponent = shop ? (
       <ShopFull
+        hashTageSearch={this.props.hashTageSearch}
         number={shop.number}
         title={shop.title}
         description={shop.description}

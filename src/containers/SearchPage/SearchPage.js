@@ -56,6 +56,7 @@ class SearchPage extends Component {
       requiredShops = ba.map(shop => {
         return (
           <ShopFull
+            hashTageSearch={this.props.hashTageSearch}
             key={uniqueId()}
             number={shop.number}
             title={shop.title}

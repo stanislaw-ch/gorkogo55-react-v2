@@ -9,8 +9,8 @@ const header = props => {
     <Navbar bg="dark" variant="dark" style={{ paddingRight: "15px" }}>
       <div className="Nav">
         <div className="ButtonBack">
-          <Button variant="danger">
-            <IoIosArrowBack onClick={props.onPressBack} />
+          <Button variant="danger" onClick={props.onPressBack}>
+            <IoIosArrowBack />
           </Button>
         </div>
         <div className="NavTitle">

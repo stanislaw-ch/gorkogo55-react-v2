@@ -18,7 +18,7 @@ const header = props => {
             {props.title ? props.title : "Title"}
           </Nav.Link>
         </div>
-        <div style={{ width: "42px", margin: "0" }} />
+        {/* <div style={{ width: "42px", margin: "0" }} /> */}
       </div>
     </Navbar>
   );

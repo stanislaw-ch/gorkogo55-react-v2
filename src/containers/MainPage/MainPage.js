@@ -21,7 +21,7 @@ export default class MainPage extends Component {
         <header className="Brown">
           <p>Добро пожаловать в</p>
           <p>
-            в торговый центра <span className="NameCS">«Две пятерки»</span>
+            в торговый центр <span className="NameCS">«Две пятерки»</span>
           </p>
         </header>
         <section className="ImageBackground" />

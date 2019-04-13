@@ -14,7 +14,7 @@ p {
 }
 
 .ImageBackground {
-  background: url(../../assets/images/gorkogo55.jpg) no-repeat center center;
+  background: url(../../assets/images/background.jpg) no-repeat center center;
   background-size: cover;
   height: 60vh;
 }

@@ -1,44 +1,45 @@
-body {
-  height: 100vh;
+p {
+  margin: 0px;
+}
+.Brown {
+  font-size: 4vh;
+  padding-top: 7vh;
+  padding-bottom: 7vh;
+  background-color: #491516;
+  color: #f0ffff;
+  font-style: italic;
+}
+.NameCS {
+  font-family: "Lobster", cursive;
 }
 
-.MainPage {
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding-bottom: 50px;
-  margin: 0;
-  background-color: #ff00000e;
-  border-bottom: 2px solid lightgray;
+.ImageBackground {
+  background: url(../../assets/images/gorkogo55.jpg) no-repeat center center;
+  background-size: cover;
+  height: 60vh;
 }
 
-.header {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  background-color: rgb(254, 255, 206);
-  border-bottom: 2px solid rgb(173, 25, 25);
+.Button {
+  margin-top: 5vh;
 }
 
-.headerPicture {
-  width: 100%;    
+.Black {
+  font-style: italic;
+  font-size: 4vh;
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  background-color: black;
+  color: azure;
+  box-shadow: 3px 3px 50px 60px black;
 }
 
-.content {  
-  padding: 20px;
-}
-
-.message {
-  padding-bottom: 30px;
-}
-
-.welcome {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-.wanna-help {
-  padding-top: 30px;
-  padding-bottom: 30px;
+@media screen and (max-width: 900px) {
+  .Black {
+    font-size: 3vh;
+    padding-top: 7vh;
+    padding-bottom: 7vh;
+  }
+  .Brown {
+    font-size: 3vh;
+  }
 }

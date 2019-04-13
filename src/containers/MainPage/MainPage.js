@@ -30,15 +30,15 @@ export default class MainPage extends Component {
         </section>
         <section className="Brown">
           <p>
-            <FaSearch />
-            <span> Моментальный поиск</span>
+            <FaSearch className="Icon" />
+            Моментальный поиск
           </p>
           <p>
-            <FiPhone />
+            <FiPhone className="Icon" />
             Звонок в один клик
           </p>
           <p>
-            <FiAlertCircle />
+            <FiAlertCircle className="Icon" />
             Вся информация под рукой
           </p>
           <Button

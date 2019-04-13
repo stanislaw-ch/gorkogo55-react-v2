@@ -32,7 +32,9 @@ p {
   color: azure;
   box-shadow: 3px 3px 50px 60px black;
 }
-
+.Icon {
+  margin-right: 10px;
+}
 @media screen and (max-width: 900px) {
   .Black {
     font-size: 3vh;

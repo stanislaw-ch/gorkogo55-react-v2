@@ -18,15 +18,15 @@ export default class MainPage extends Component {
   render() {
     return (
       <section className="Main ImageBackground">
-        <header className="Brown">
+        <header className="Brown BoxShadow">
           <p className="Welcome">Добро пожаловать в</p>
           <p>торговый центр «Две пятерки»</p>
         </header>
         <section className="Separator" />
-        <section className="Black">
+        <section className="Black BoxShadow">
           <p>Все товары и услуги в одном месте</p>
         </section>
-        <section className="Brown">
+        <section className="Brown BoxShadow">
           <p className="Option">
             <FaSearch className="Icon" />
             Моментальный поиск
@@ -49,7 +49,7 @@ export default class MainPage extends Component {
           </Button>
         </section>
         <section className="Separator" />
-        <section className="Black">
+        <section className="Black  BoxShadow">
           <p>Нашли ошибку? Сообщите нам!</p>
           <Button variant="light" size="lg" className="Button">
             Сообщить об ошибке

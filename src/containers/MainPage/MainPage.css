@@ -1,44 +1,63 @@
-body {
-  height: 100vh;
+p {
+  margin: 0px;
 }
 
-.MainPage {
-  min-height: 90vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  padding-bottom: 50px;
-  margin: 0;
-  background-color: #ff00000e;
-  border-bottom: 2px solid lightgray;
+.Main {
+  color: rgb(252, 237, 237);
+  font-family: Georgia, serif;
+  font-size: 38px;
+  font-style: italic;
+  font-weight: 400;
+}
+.Welcome {
+  font-style: normal;
+}
+.Brown {
+  padding-top: 7vh;
+  padding-bottom: 7vh;
+  background-color: #491516;
+  color: rgb(252, 237, 237);
+  font-style: italic;
 }
 
-.header {
-  padding-top: 30px;
-  padding-bottom: 30px;
-  background-color: rgb(254, 255, 206);
-  border-bottom: 2px solid rgb(173, 25, 25);
+.ImageBackground {
+  background: url(../../assets/images/background.jpg) no-repeat center center;
+  background-size: cover;
+  height: 60vh;
+}
+.Button {
+  margin-top: 5vh;
+  padding: 3vh;
 }
 
-.headerPicture {
-  width: 100%;    
+.Option {
+  display: block;
+  text-align: left;
+  padding-left: 33vw;
+  margin-bottom: 3vh;
 }
 
-.content {  
-  padding: 20px;
+.Black {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  background-color: black;
+  color: rgb(252, 237, 237);
+  box-shadow: 3px 3px 50px 60px black;
 }
-
-.message {
-  padding-bottom: 30px;
+.Icon {
+  margin-right: 10px;
 }
-
-.welcome {
-  padding-top: 30px;
-  padding-bottom: 30px;
-}
-
-.wanna-help {
-  padding-top: 30px;
-  padding-bottom: 30px;
+@media screen and (max-width: 900px) {
+  .Main {
+    font-size: 3vh;
+  }
+  .Black {
+    padding-top: 7vh;
+    padding-bottom: 7vh;
+  }
+  .Option {
+    display: block;
+    text-align: left;
+    padding-left: 15vmin;
+  }
 }

@@ -1,9 +1,10 @@
 import React, { Component } from "react";
-import { Container, Button } from "react-bootstrap";
+import { Button } from "react-bootstrap";
+import { FaSearch } from "react-icons/fa";
+import { FiPhone, FiAlertCircle } from "react-icons/fi";
 
-import Spinner from "../../components/Spinner/Spinner";
+// import Spinner from "../../components/Spinner/Spinner";
 import "./MainPage.css";
-import headerPicture from "../../assets/images/dve_pyaterki.jpg";
 
 export default class MainPage extends Component {
   onSearchForm = () => {
@@ -16,51 +17,45 @@ export default class MainPage extends Component {
 
   render() {
     return (
-      <div className="MainPage">
-        <div className="header">
-          {/* eslint-disable-next-line jsx-a11y/img-redundant-alt */}
-          <img
-            src={headerPicture}
-            alt="Header picture"
-            className="headerPicture"
-          />
-        </div>
-        <div className="content">
-          <h3 className="welcome">Уважаемые посетители!</h3>
-          <p className="message">
-            Добро пожаловать в торговый центр «Две пятерки». Мы собрали для Вас
-            подробную информацию о магазинах, товарах и услугах, которые вы
-            можете получить на нашем сайте.
+      <section className="Main">
+        <header className="Brown">
+          <p className="Welcome">Добро пожаловать в</p>
+          <p>торговый центр «Две пятерки»</p>
+        </header>
+        <section className="ImageBackground" />
+        <section className="Black">
+          <p>Все товары и услуги в одном месте</p>
+        </section>
+        <section className="Brown">
+          <p className="Option">
+            <FaSearch className="Icon" />
+            Моментальный поиск
           </p>
-          {this.props.isLoadingData ? (
-            <Container>
-              <p> Загрузка данных ...</p>
-              <Spinner />
-            </Container>
-          ) : (
-            <div>
-              <Button variant="danger" size="lg" onClick={this.onSearchForm}>
-                Приступить к поиску
-              </Button>
-              <p className="wanna-help">
-                Помогите сделать поиск лучше - добавьте недостающую информацию и
-                мы ее опубликуем!
-              </p>
-              <iframe
-                title="googleForms"
-                src="https://docs.google.com/forms/d/e/1FAIpQLSdTOMQFz4SAghmm7_gPhKjsJcYZKvxEOp3kPA6MsNOhLy1TGQ/viewform?embedded=true"
-                width="100%"
-                height="1000"
-                frameborder="0"
-                marginheight="0"
-                marginwidth="0"
-              >
-                Loading...
-              </iframe>
-            </div>
-          )}
-        </div>
-      </div>
+          <p className="Option">
+            <FiPhone className="Icon" />
+            Звонок в один клик
+          </p>
+          <p className="Option">
+            <FiAlertCircle className="Icon" />
+            Вся информация под рукой
+          </p>
+          <Button
+            variant="light"
+            size="lg"
+            className="Button"
+            onClick={this.onSearchForm}
+          >
+            Приступить к поиску
+          </Button>
+        </section>
+        <section className="ImageBackground" />
+        <section className="Black">
+          <p>Нашли ошибку? Сообщите нам!</p>
+          <Button variant="light" size="lg" className="Button">
+            Сообщить об ошибке
+          </Button>
+        </section>
+      </section>
     );
   }
 }

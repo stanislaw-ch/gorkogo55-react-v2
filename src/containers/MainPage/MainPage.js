@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Button } from "react-bootstrap";
 import { FaSearch } from "react-icons/fa";
 import { FiPhone, FiAlertCircle } from "react-icons/fi";
+import background from "../../assets/images/background.jpg";
 
 // import Spinner from "../../components/Spinner/Spinner";
 import "./MainPage.css";
@@ -17,7 +18,9 @@ export default class MainPage extends Component {
 
   render() {
     return (
-      <section className="Main ImageBackground">
+      <section className="Main">
+        <img src={background} className="ImageBackground" alt="background">
+        </img>
         <header className="Brown BoxShadow">
           <p className="Welcome">Добро пожаловать в</p>
           <p>торговый центр «Две пятерки»</p>

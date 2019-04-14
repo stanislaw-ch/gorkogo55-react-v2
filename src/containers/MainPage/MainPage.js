@@ -19,8 +19,8 @@ export default class MainPage extends Component {
     return (
       <section className="Main">
         <header className="Brown">
-          <p>Добро пожаловать в</p>
-          <p>в торговый центр «Две пятерки»</p>
+          <p className="Welcome">Добро пожаловать в</p>
+          <p>торговый центр «Две пятерки»</p>
         </header>
         <section className="ImageBackground" />
         <section className="Black">

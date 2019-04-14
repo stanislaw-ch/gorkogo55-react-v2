@@ -20,24 +20,22 @@ export default class MainPage extends Component {
       <section className="Main">
         <header className="Brown">
           <p>Добро пожаловать в</p>
-          <p>
-            в торговый центр <span className="NameCS">«Две пятерки»</span>
-          </p>
+          <p>в торговый центр «Две пятерки»</p>
         </header>
         <section className="ImageBackground" />
         <section className="Black">
           <p>Все товары и услуги в одном месте</p>
         </section>
         <section className="Brown">
-          <p>
+          <p className="Option">
             <FaSearch className="Icon" />
             Моментальный поиск
           </p>
-          <p>
+          <p className="Option">
             <FiPhone className="Icon" />
             Звонок в один клик
           </p>
-          <p>
+          <p className="Option">
             <FiAlertCircle className="Icon" />
             Вся информация под рукой
           </p>

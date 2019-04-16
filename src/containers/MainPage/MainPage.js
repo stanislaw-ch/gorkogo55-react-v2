@@ -9,8 +9,8 @@ import "./MainPage.css";
 
 export default class MainPage extends Component {
   state = {
-    width: 0,
-    height: 0
+    displayWidth: 0,
+    displayHeight: 0
   };
 
   componentDidMount() {
@@ -24,15 +24,14 @@ export default class MainPage extends Component {
   }
 
   updateWindowDimensions = () => {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
+    this.setState({
+      displayWidth: window.innerWidth,
+      displayHeight: window.innerHeight
+    });
   };
 
   onSearchForm = () => {
     this.props.history.push("/search");
-  };
-
-  updateWindowDimensions = () => {
-    this.setState({ width: window.innerWidth, height: window.innerHeight });
   };
 
   render() {

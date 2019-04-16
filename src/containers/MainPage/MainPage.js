@@ -8,19 +8,38 @@ import background from "../../assets/images/background.jpg";
 import "./MainPage.css";
 
 export default class MainPage extends Component {
-  onSearchForm = () => {
-    this.props.history.push("/search");
+  state = {
+    width: 0,
+    height: 0
   };
 
   componentDidMount() {
     this.props.clearSearchValue();
+    this.updateWindowDimensions();
+    window.addEventListener("resize", this.updateWindowDimensions);
   }
 
+  componentWillUnmount() {
+    window.removeEventListener("resize", this.updateWindowDimensions);
+  }
+
+  updateWindowDimensions = () => {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  };
+
+  onSearchForm = () => {
+    this.props.history.push("/search");
+  };
+
+  updateWindowDimensions = () => {
+    this.setState({ width: window.innerWidth, height: window.innerHeight });
+  };
+
   render() {
+    console.log(this.state);
     return (
       <section className="Main">
-        <img src={background} className="ImageBackground" alt="background">
-        </img>
+        <img src={background} className="ImageBackground" alt="background" />
         <header className="Brown BoxShadow">
           <p className="Welcome">Добро пожаловать в</p>
           <p>торговый центр «Две пятерки»</p>

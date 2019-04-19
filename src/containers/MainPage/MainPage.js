@@ -10,7 +10,9 @@ import "./MainPage.css";
 export default class MainPage extends Component {
   state = {
     displayWidth: 0,
-    displayHeight: 0
+    displayHeight: 0,
+    imgLeft: 0,
+    imgTop: 0
   };
 
   componentDidMount() {
@@ -24,9 +26,17 @@ export default class MainPage extends Component {
   }
 
   updateWindowDimensions = () => {
+    let imgLeft = 0;
+    let imgTop = 0;
+    if (window.innerWidth < 1200) {
+      imgLeft = 960 - window.innerWidth;
+      imgTop = 530 - window.innerWidth;
+    }
     this.setState({
       displayWidth: window.innerWidth,
-      displayHeight: window.innerHeight
+      displayHeight: window.innerHeight,
+      imgLeft: imgLeft,
+      imgTop: imgTop
     });
   };
 
@@ -38,7 +48,15 @@ export default class MainPage extends Component {
     console.log(this.state);
     return (
       <section className="Main">
-        <img src={background} className="ImageBackground" alt="background" />
+        <img
+          src={background}
+          className="ImageBackground"
+          alt="background"
+          style={{
+            left: `-${this.state.imgLeft}px`,
+            top: `-${this.state.imgTop}px`
+          }}
+        />
         <header className="Brown BoxShadow">
           <p className="Welcome">Добро пожаловать в</p>
           <p>торговый центр «Две пятерки»</p>

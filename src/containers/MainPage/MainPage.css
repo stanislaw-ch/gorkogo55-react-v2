@@ -20,17 +20,6 @@ p {
   font-style: italic;
 }
 
-.ImageBackground {
-  z-index: -3;
-  content: " ";
-  position: fixed;
-  will-change: transform;
-  top: 0;
-  left: 0;
-  /* height: 100%; */
-  /* width: 100%; */
-}
-
 .Button {
   margin-top: 5vh;
   padding: 3vh;
@@ -64,13 +53,6 @@ p {
     display: block;
     text-align: left;
     padding-left: 15vmin;
-  }
-}
-
-@media screen and (min-width: 1200px) {
-  .ImageBackground {
-    height: 100% !important;
-    width: 100% !important;
   }
 }
 

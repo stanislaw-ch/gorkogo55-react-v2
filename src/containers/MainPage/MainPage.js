@@ -52,7 +52,7 @@ export default class MainPage extends Component {
         <section className="Black  BoxShadow">
           <p>Нашли ошибку? Сообщите нам!</p>
           <Button
-            variant="light"
+            variant="danger"
             size="lg"
             className="Button"
             href="https://forms.gle/gRspoCUZuXFGzzXY8"

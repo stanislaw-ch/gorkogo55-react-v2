@@ -50,45 +50,47 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Switch>
-          <Route
-            path="/"
-            exact
-            render={routeProps => (
-              <MainPage
-                {...routeProps}
-                isLoadingData={this.state.isLoading}
-                searchValue={this.state.searchValue}
-                clearSearchValue={this.clearSearchValue}
-                changeSearchValue={this.changeSearchValue}
-              />
-            )}
-          />
-          <Route
-            path="/search"
-            render={routeProps => (
-              <SearchPage
-                {...routeProps}
-                hashTageSearch={this.hashTagAddSearchValue}
-                isLoadingData={this.state.isLoading}
-                changeSearchValue={this.changeSearchValue}
-                data={this.state.data}
-                searchValue={this.state.searchValue}
-              />
-            )}
-          />
-          <Route
-            path="/shop/:id"
-            render={routeProps => (
-              <ShopPage
-                {...routeProps}
-                hashTageSearch={this.hashTagAddSearchValue}
-                data={this.state.data}
-                isLoadingData={this.state.isLoading}
-              />
-            )}
-          />
-        </Switch>
+        <main>
+          <Switch>
+            <Route
+              path="/"
+              exact
+              render={routeProps => (
+                <MainPage
+                  {...routeProps}
+                  isLoadingData={this.state.isLoading}
+                  searchValue={this.state.searchValue}
+                  clearSearchValue={this.clearSearchValue}
+                  changeSearchValue={this.changeSearchValue}
+                />
+              )}
+            />
+            <Route
+              path="/search"
+              render={routeProps => (
+                <SearchPage
+                  {...routeProps}
+                  hashTageSearch={this.hashTagAddSearchValue}
+                  isLoadingData={this.state.isLoading}
+                  changeSearchValue={this.changeSearchValue}
+                  data={this.state.data}
+                  searchValue={this.state.searchValue}
+                />
+              )}
+            />
+            <Route
+              path="/shop/:id"
+              render={routeProps => (
+                <ShopPage
+                  {...routeProps}
+                  hashTageSearch={this.hashTagAddSearchValue}
+                  data={this.state.data}
+                  isLoadingData={this.state.isLoading}
+                />
+              )}
+            />
+          </Switch>
+        </main>
         <footer>
           {/* Yandex.Metrika informer */}
           <a

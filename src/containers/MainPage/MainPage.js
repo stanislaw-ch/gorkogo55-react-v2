@@ -16,7 +16,6 @@ export default class MainPage extends Component {
   };
 
   render() {
-    console.log(this.state);
     return (
       <section className="Main">
         <header className="Brown BoxShadow">
@@ -52,7 +51,12 @@ export default class MainPage extends Component {
         <section className="Separator" />
         <section className="Black  BoxShadow">
           <p>Нашли ошибку? Сообщите нам!</p>
-          <Button variant="light" size="lg" className="Button">
+          <Button
+            variant="light"
+            size="lg"
+            className="Button"
+            href="https://forms.gle/gRspoCUZuXFGzzXY8"
+          >
             Сообщить об ошибке
           </Button>
         </section>

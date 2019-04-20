@@ -32,7 +32,6 @@ const shop = props => {
         {keywords && keywords !== "-" ? (
           <Card.Text>
             {keywords.map(kw => {
-              console.log(kw);
               return (
                 <Button
                   variant="link"

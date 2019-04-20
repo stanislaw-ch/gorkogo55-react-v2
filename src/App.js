@@ -4,7 +4,7 @@ import Tabletop from "tabletop";
 
 import MainPage from "./containers/MainPage/MainPage";
 import SearchPage from "./containers/SearchPage/SearchPage";
-import ShowPage from "./containers/ShopPage/ShopPage";
+import ShopPage from "./containers/ShopPage/ShopPage";
 // import testData from "./data/shops.json";
 import "./App.css";
 
@@ -80,7 +80,7 @@ class App extends Component {
           <Route
             path="/shop/:id"
             render={routeProps => (
-              <ShowPage
+              <ShopPage
                 {...routeProps}
                 hashTageSearch={this.hashTagAddSearchValue}
                 data={this.state.data}

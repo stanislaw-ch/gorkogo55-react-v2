@@ -27,18 +27,22 @@ export default class MainPage extends Component {
           <p>Все товары и услуги в одном месте</p>
         </section>
         <section className="Brown BoxShadow">
-          <p className="Option">
-            <FaSearch className="Icon" />
-            Моментальный поиск
-          </p>
-          <p className="Option">
-            <FiPhone className="Icon" />
-            Звонок в один клик
-          </p>
-          <p className="Option">
-            <FiAlertCircle className="Icon" />
-            Вся информация под рукой
-          </p>
+          <div className="OptionsContainer">
+            <div className="Options">
+              <p className="Option">
+                <FaSearch className="Icon" />
+                Моментальный поиск
+              </p>
+              <p className="Option">
+                <FiPhone className="Icon" />
+                Звонок в один клик
+              </p>
+              <p className="Option">
+                <FiAlertCircle className="Icon" />
+                Вся информация под рукой
+              </p>
+            </div>
+          </div>
           <Button
             variant="light"
             size="lg"

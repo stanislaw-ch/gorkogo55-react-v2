@@ -1,12 +1,14 @@
 import React, { Component } from "react";
-import { Container, ListGroup } from "react-bootstrap";
+import { Container, ListGroup, Button } from "react-bootstrap";
 import uniqueId from "lodash/uniqueId";
+import { FaAngleLeft } from "react-icons/fa";
 
 import Header from "../../components/Header/Header";
 import SearchForm from "../../components/SearchForm/SearchForm";
 import ShopInList from "../../components/Shop/ShopInList";
 import ShopFull from "../../components/Shop/ShopFull";
 import Spinner from "../../components/Spinner/Spinner";
+
 import "./SearchPage.css";
 
 class SearchPage extends Component {
@@ -77,16 +79,26 @@ class SearchPage extends Component {
     if (this.props.isLoadingData) {
       return (
         <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
-          <p>Загрузка данных ...</p>
           <Spinner />
         </Container>
       );
     }
     return (
       <>
-        <Header title={"Поиск"} onPressBack={this.goMainPage} />
+        {/* <Header title={"Поиск"} onPressBack={this.goMainPage} /> */}
+        <header className="Brown BoxShadow Header">
+          <div onClick={this.goMainPage} className="Icon">
+            <FaAngleLeft />
+          </div>
+          <div className="TitleHeader">
+            <p>Поиск</p>
+          </div>
+          <div onClick={this.goMainPage} className="Icon Disabled">
+            <FaAngleLeft />
+          </div>
+        </header>
         <Container
-          style={{ padding: "3vh", paddingTop: "7vh" }}
+          // style={{ padding: "3vh", paddingTop: "7vh" }}
           className="SearchPage"
         >
           <SearchForm
@@ -98,6 +110,17 @@ class SearchPage extends Component {
             {requiredShops}
           </ListGroup>
         </Container>
+        <section className="Black  BoxShadow">
+          <p>Нашли ошибку? Сообщите нам!</p>
+          <Button
+            variant="danger"
+            size="lg"
+            className="Button"
+            href="https://forms.gle/gRspoCUZuXFGzzXY8"
+          >
+            Сообщить об ошибке
+          </Button>
+        </section>
       </>
     );
   }

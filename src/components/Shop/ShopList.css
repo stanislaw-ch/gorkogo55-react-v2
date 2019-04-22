@@ -1,0 +1,50 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.ShopCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  margin-bottom: 20px;
+  color: black;
+  padding: 10px;
+  border: 1.5px solid black;
+  border-radius: 7px;
+}
+
+.Icon {
+  margin: 3.5vw;
+  font-size: 30px;
+}
+.Text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 3;
+  width: 55%;
+}
+.Title {
+  font-size: 2vw;
+  align-self: flex-start;
+}
+.Description {
+  font-size: 1.3vw;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  align-self: flex-start;
+  width: 100%;
+  text-align: left;
+}
+@media screen and (max-width: 900px) {
+  .Title {
+    font-size: 4.5vw;
+  }
+  .Description {
+    font-size: 3vw;
+  }
+}

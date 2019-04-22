@@ -19,7 +19,7 @@ export default class MainPage extends Component {
     return (
       <section className="Main">
         <header className="Brown BoxShadow">
-          <p className="Welcome">Добро пожаловать в</p>
+          <p className="Title">Добро пожаловать в</p>
           <p>торговый центр «Две пятерки»</p>
         </header>
         <section className="Separator" />

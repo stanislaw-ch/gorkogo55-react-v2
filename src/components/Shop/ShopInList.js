@@ -1,33 +1,33 @@
 import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
+import { FaShoppingCart, FaAngleRight } from "react-icons/fa";
 
-import "./Shop.css";
+import "./ShopList.css";
 
 export const capitalizeFirstLetter = string => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
 const Shop = props => {
-  const { number, title, description, keywords, onSelectShop } = props;
+  const { number, title, description, onSelectShop } = props;
   return (
     <ListGroup.Item
-      className="Shop"
+      className="ShopCard"
       onClick={() => onSelectShop(number)}
       action
     >
-      <h6>
-        {number}. {capitalizeFirstLetter(title)}
-      </h6>
-      {description && description !== "-" && (keywords && keywords !== "-") ? (
-        <p>
-          {capitalizeFirstLetter(description)}.{" "}
-          <i>Ключевые слова: {keywords}</i>
-        </p>
-      ) : description && description !== "-" ? (
-        <p>{capitalizeFirstLetter(description)}</p>
-      ) : keywords && keywords !== "-" ? (
-        <p>Ключевые слова: {keywords}</p>
-      ) : null}
+      <div className="Icon">
+        <FaShoppingCart />
+      </div>
+      <div className="Text">
+        <p className="Title">{capitalizeFirstLetter(title)}</p>
+        {description && description !== "-" ? (
+          <p className="Description">{capitalizeFirstLetter(description)}. </p>
+        ) : null}
+      </div>
+      <div className="Icon">
+        <FaAngleRight />
+      </div>
     </ListGroup.Item>
   );
 };

@@ -20,7 +20,9 @@ const Shop = props => {
         <FaShoppingCart />
       </div>
       <div className="Text">
-        <p className="Title">{capitalizeFirstLetter(title)}</p>
+        <p className="Title">
+          {number}. {capitalizeFirstLetter(title)}
+        </p>
         {description && description !== "-" ? (
           <p className="Description">{capitalizeFirstLetter(description)}. </p>
         ) : null}

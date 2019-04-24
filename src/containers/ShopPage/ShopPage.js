@@ -50,7 +50,7 @@ class ShopPage extends Component {
     }
     return (
       <>
-        <Header onBack={this.goSearchPage} title="Горького 55" />
+        <Header goBack={this.goSearchPage} title="Горького 55" />
         <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
           {this.renderShop()}
         </Container>

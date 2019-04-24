@@ -6,6 +6,9 @@ import Header from "../../components/Header/Header";
 import Spinner from "../../components/Spinner/Spinner";
 
 class ShopPage extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   goSearchPage = () => {
     this.props.history.push(`/search`);
   };

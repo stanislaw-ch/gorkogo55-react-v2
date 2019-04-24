@@ -12,6 +12,9 @@ import Spinner from "../../components/Spinner/Spinner";
 import "./SearchPage.css";
 
 class SearchPage extends Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   goMainPage = () => {
     this.props.history.push(`/`);
   };

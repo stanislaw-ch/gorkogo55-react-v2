@@ -5,6 +5,8 @@ import ShopFull from "../../components/Shop/ShopFull";
 import Header from "../../components/Header/Header";
 import Spinner from "../../components/Spinner/Spinner";
 
+import "./ShopPage.css";
+
 class ShopPage extends Component {
   componentDidMount() {
     window.scrollTo(0, 0);
@@ -48,7 +50,7 @@ class ShopPage extends Component {
     }
     return (
       <>
-        <Header onPressBack={this.goSearchPage} title="Горького 55" />
+        <Header onBack={this.goSearchPage} title="Горького 55" />
         <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
           {this.renderShop()}
         </Container>

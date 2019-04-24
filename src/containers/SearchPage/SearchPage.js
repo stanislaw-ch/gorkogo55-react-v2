@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Container, ListGroup, Button } from "react-bootstrap";
 import uniqueId from "lodash/uniqueId";
-import { FaAngleLeft } from "react-icons/fa";
 
 import Header from "../../components/Header/Header";
 import SearchForm from "../../components/SearchForm/SearchForm";
@@ -88,22 +87,8 @@ class SearchPage extends Component {
     }
     return (
       <>
-        {/* <Header title={"Поиск"} onPressBack={this.goMainPage} /> */}
-        <header className="Brown BoxShadow Header">
-          <div onClick={this.goMainPage} className="Icon">
-            <FaAngleLeft />
-          </div>
-          <div className="TitleHeader">
-            <p>Поиск</p>
-          </div>
-          <div onClick={this.goMainPage} className="Icon Disabled">
-            <FaAngleLeft />
-          </div>
-        </header>
-        <Container
-          // style={{ padding: "3vh", paddingTop: "7vh" }}
-          className="SearchPage"
-        >
+        <Header goBack={this.goMainPage} title="Поиск" />
+        <Container className="SearchPage">
           <SearchForm
             {...this.props}
             searchValue={this.props.searchValue}

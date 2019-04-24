@@ -1,26 +1,19 @@
 import React from "react";
-import { Navbar, Nav, Button } from "react-bootstrap";
-import { IoIosArrowBack } from "react-icons/io";
-
-import "./Header.css";
+import { FaAngleLeft } from "react-icons/fa";
 
 const header = props => {
   return (
-    <Navbar bg="dark" variant="dark" style={{ paddingRight: "15px" }}>
-      <div className="Nav">
-        <div className="ButtonBack">
-          <Button variant="danger" onClick={props.onPressBack}>
-            <IoIosArrowBack />
-          </Button>
-        </div>
-        <div className="NavTitle">
-          <Nav.Link eventKey="disabled" disabled>
-            {props.title ? props.title : "Title"}
-          </Nav.Link>
-        </div>
-        {/* <div style={{ width: "42px", margin: "0" }} /> */}
+    <header className="Brown BoxShadow Header">
+      <div onClick={props.goBack} className="Icon">
+        <FaAngleLeft />
       </div>
-    </Navbar>
+      <div className="TitleHeader">
+        <p>{props.title}</p>
+      </div>
+      <div className="Icon Disabled">
+        <FaAngleLeft />
+      </div>
+    </header>
   );
 };
 

@@ -30,6 +30,11 @@
 .Title {
   font-size: 2vw;
   align-self: flex-start;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+  text-align: left;
 }
 .Description {
   font-size: 1.3vw;

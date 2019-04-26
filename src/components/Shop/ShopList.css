@@ -27,7 +27,7 @@
   flex-grow: 3;
   width: 55%;
 }
-.Title {
+.NameShop {
   font-size: 2vw;
   align-self: flex-start;
   white-space: nowrap;
@@ -46,7 +46,7 @@
   text-align: left;
 }
 @media screen and (max-width: 900px) {
-  .Title {
+  .NameShop {
     font-size: 4.5vw;
   }
   .Description {

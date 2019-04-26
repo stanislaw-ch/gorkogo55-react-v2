@@ -53,19 +53,11 @@ export default class MainPage extends Component {
               Приступить к поиску
             </Button>
           </div>
-          <div>
+          <div className="Btns">
             <Button
               variant="light"
               // size="lg"
-              className="Button"
-              onClick={() => this.props.changeSearchCategory("одежда")}
-            >
-              Одежда
-            </Button>
-            <Button
-              variant="light"
-              // size="lg"
-              className="Button"
+              className="Button Category"
               onClick={() =>
                 this.props.changeSearchCategory("Мебель и предметы интерьера")
               }
@@ -75,7 +67,7 @@ export default class MainPage extends Component {
             <Button
               variant="light"
               // size="lg"
-              className="Button"
+              className="Button Category"
               onClick={() =>
                 this.props.changeSearchCategory("Техника и электроника")
               }
@@ -85,7 +77,7 @@ export default class MainPage extends Component {
             <Button
               variant="light"
               // size="lg"
-              className="Button"
+              className="Button Category"
               onClick={() => this.props.changeSearchCategory("Обувь и сумки")}
             >
               Обувь и сумки
@@ -93,7 +85,7 @@ export default class MainPage extends Component {
             <Button
               variant="light"
               // size="lg"
-              className="Button"
+              className="Button Category"
               onClick={() =>
                 this.props.changeSearchCategory("Кафе и развлечения")
               }
@@ -103,7 +95,7 @@ export default class MainPage extends Component {
             <Button
               variant="light"
               // size="lg"
-              className="Button"
+              className="Button Category"
               onClick={() =>
                 this.props.changeSearchCategory("Сувениры и подарки")
               }
@@ -113,7 +105,7 @@ export default class MainPage extends Component {
             <Button
               variant="light"
               // size="lg"
-              className="Button"
+              className="Button Category"
               onClick={() =>
                 this.props.changeSearchCategory("Красота и здоровье")
               }
@@ -123,7 +115,15 @@ export default class MainPage extends Component {
             <Button
               variant="light"
               // size="lg"
-              className="Button"
+              className="Button Category"
+              onClick={() => this.props.changeSearchCategory("одежда")}
+            >
+              Одежда
+            </Button>
+            <Button
+              variant="light"
+              // size="lg"
+              className="Button Category"
               onClick={() =>
                 this.props.changeSearchCategory("Белье и одежда для дома")
               }
@@ -133,7 +133,7 @@ export default class MainPage extends Component {
             <Button
               variant="light"
               // size="lg"
-              className="Button"
+              className="Button Category"
               onClick={() => this.props.changeSearchCategory("Услуги")}
             >
               Услуги
@@ -141,7 +141,7 @@ export default class MainPage extends Component {
             <Button
               variant="light"
               // size="lg"
-              className="Button"
+              className="Button Category"
               onClick={() => this.props.changeSearchCategory("Туалет")}
             >
               Туалет

@@ -18,11 +18,14 @@ p {
   background-color: #491516;
   color: rgb(252, 237, 237);
   font-style: italic;
+  display: flex;
+  flex-direction: column;
 }
 
 .Button {
   margin-top: 5vh;
   padding: 3vh;
+  margin: 5vh 1vw 0 1vw;
 }
 .OptionsContainer {
   display: flex;
@@ -43,15 +46,6 @@ p {
 .Icon {
   margin-right: 10px;
 }
-@media screen and (max-width: 900px) {
-  .Main {
-    font-size: 3vh;
-  }
-  .Black {
-    padding-top: 7vh;
-    padding-bottom: 7vh;
-  }
-}
 
 .Separator {
   height: 60vh;
@@ -61,4 +55,29 @@ p {
   -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+}
+
+.Btns {
+  align-self: center;
+  width: 60vw;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.Category {
+  background-color: darkgoldenrod;
+  border: 2px solid rgb(19, 18, 20);
+  border-radius: 35px;
+}
+
+@media screen and (max-width: 900px) {
+  .Main {
+    font-size: 3vh;
+  }
+  .Black {
+    padding-top: 7vh;
+    padding-bottom: 7vh;
+  }
 }

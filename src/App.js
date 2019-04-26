@@ -33,8 +33,8 @@ class App extends Component {
     });
   }
 
-  hashTagAddSearchValue = value => {
-    this.setState({ searchValue: value });
+  changeSearchGroup = searchValue => {
+    this.setState({ searchValue });
     this.props.history.push(`/search`);
   };
 
@@ -61,7 +61,7 @@ class App extends Component {
                   isLoadingData={this.state.isLoading}
                   searchValue={this.state.searchValue}
                   clearSearchValue={this.clearSearchValue}
-                  changeSearchValue={this.changeSearchValue}
+                  changeSearchCategory={this.changeSearchGroup}
                 />
               )}
             />
@@ -70,7 +70,7 @@ class App extends Component {
               render={routeProps => (
                 <SearchPage
                   {...routeProps}
-                  hashTageSearch={this.hashTagAddSearchValue}
+                  hashTageSearch={this.changeSearchGroup}
                   isLoadingData={this.state.isLoading}
                   changeSearchValue={this.changeSearchValue}
                   data={this.state.data}

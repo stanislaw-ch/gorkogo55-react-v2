@@ -43,14 +43,110 @@ export default class MainPage extends Component {
               </p>
             </div>
           </div>
-          <Button
-            variant="light"
-            size="lg"
-            className="Button"
-            onClick={this.onSearchForm}
-          >
-            Приступить к поиску
-          </Button>
+          <div>
+            <Button
+              variant="light"
+              size="lg"
+              className="Button"
+              onClick={this.onSearchForm}
+            >
+              Приступить к поиску
+            </Button>
+          </div>
+          <div>
+            <Button
+              variant="light"
+              // size="lg"
+              className="Button"
+              onClick={() => this.props.changeSearchCategory("одежда")}
+            >
+              Одежда
+            </Button>
+            <Button
+              variant="light"
+              // size="lg"
+              className="Button"
+              onClick={() =>
+                this.props.changeSearchCategory("Мебель и предметы интерьера")
+              }
+            >
+              Мебель и предметы интерьера
+            </Button>
+            <Button
+              variant="light"
+              // size="lg"
+              className="Button"
+              onClick={() =>
+                this.props.changeSearchCategory("Техника и электроника")
+              }
+            >
+              Техника и электроника
+            </Button>
+            <Button
+              variant="light"
+              // size="lg"
+              className="Button"
+              onClick={() => this.props.changeSearchCategory("Обувь и сумки")}
+            >
+              Обувь и сумки
+            </Button>
+            <Button
+              variant="light"
+              // size="lg"
+              className="Button"
+              onClick={() =>
+                this.props.changeSearchCategory("Кафе и развлечения")
+              }
+            >
+              Кафе и развлечения
+            </Button>
+            <Button
+              variant="light"
+              // size="lg"
+              className="Button"
+              onClick={() =>
+                this.props.changeSearchCategory("Сувениры и подарки")
+              }
+            >
+              Сувениры и подарки
+            </Button>
+            <Button
+              variant="light"
+              // size="lg"
+              className="Button"
+              onClick={() =>
+                this.props.changeSearchCategory("Красота и здоровье")
+              }
+            >
+              Красота и здоровье
+            </Button>
+            <Button
+              variant="light"
+              // size="lg"
+              className="Button"
+              onClick={() =>
+                this.props.changeSearchCategory("Белье и одежда для дома")
+              }
+            >
+              Белье и одежда для дома
+            </Button>
+            <Button
+              variant="light"
+              // size="lg"
+              className="Button"
+              onClick={() => this.props.changeSearchCategory("Услуги")}
+            >
+              Услуги
+            </Button>
+            <Button
+              variant="light"
+              // size="lg"
+              className="Button"
+              onClick={() => this.props.changeSearchCategory("Туалет")}
+            >
+              Туалет
+            </Button>
+          </div>
         </section>
         <section className="Separator" />
         <section className="Black  BoxShadow">

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import { Container, ListGroup, Button } from "react-bootstrap";
 import uniqueId from "lodash/uniqueId";
 
@@ -10,111 +10,111 @@ import Spinner from "../../components/Spinner/Spinner";
 
 import "./SearchPage.css";
 
-class SearchPage extends Component {
-  componentDidMount() {
+const SearchPage = props => {
+
+  useEffect(() => {
     window.scrollTo(0, 0);
-  }
-  goMainPage = () => {
-    this.props.history.push(`/`);
+  }, [])
+
+  const goMainPage = () => {
+    props.history.push(`/`);
   };
 
-  selectShop = id => {
-    this.props.history.push(`/shop/${id}`);
+  const selectShop = id => {
+    props.history.push(`/shop/${id}`);
   };
 
   /**
    * This method implements data filtering.
    */
-  filterData = item => {
+  const filterData = item => {
     let result;
 
     // TODO: Update search algorithm here and delete this message!
     result =
-      item.title.toLowerCase().includes(this.props.searchValue.toLowerCase()) ||
+      item.title.toLowerCase().includes(props.searchValue.toLowerCase()) ||
       item.keywords
         .toLowerCase()
-        .includes(this.props.searchValue.toLowerCase()) ||
+        .includes(props.searchValue.toLowerCase()) ||
       item.description
         .toLowerCase()
-        .includes(this.props.searchValue.toLowerCase()) ||
+        .includes(props.searchValue.toLowerCase()) ||
       item.category
         .toLowerCase()
-        .includes(this.props.searchValue.toLowerCase());
+        .includes(props.searchValue.toLowerCase());
 
     return result;
   };
 
-  render() {
-    let ba = this.props.data.filter(this.filterData);
-    let requiredShops = [];
-    requiredShops = ba.map(item => {
+  let ba = props.data.filter(filterData);
+  let requiredShops = [];
+  requiredShops = ba.map(item => {
+    return (
+      <ShopInList
+        onSelectShop={selectShop}
+        key={uniqueId()}
+        number={item.number}
+        title={item.title}
+        description={item.description}
+        keywords={item.keywords}
+      />
+    );
+  });
+  if (requiredShops.length === 1) {
+    requiredShops = ba.map(shop => {
       return (
-        <ShopInList
-          onSelectShop={this.selectShop}
+        <ShopFull
+          hashTageSearch={props.hashTageSearch}
           key={uniqueId()}
-          number={item.number}
-          title={item.title}
-          description={item.description}
-          keywords={item.keywords}
+          number={shop.number}
+          title={shop.title}
+          description={shop.description}
+          keywords={shop.keywords}
+          phone={shop.phone}
+          vk={shop.vk}
+          instagram={shop.instagram}
+          website={shop.website}
+          route={shop.route}
         />
       );
     });
-    if (requiredShops.length === 1) {
-      requiredShops = ba.map(shop => {
-        return (
-          <ShopFull
-            hashTageSearch={this.props.hashTageSearch}
-            key={uniqueId()}
-            number={shop.number}
-            title={shop.title}
-            description={shop.description}
-            keywords={shop.keywords}
-            phone={shop.phone}
-            vk={shop.vk}
-            instagram={shop.instagram}
-            website={shop.website}
-            route={shop.route}
-          />
-        );
-      });
-    }
-    if (requiredShops.length === 0 && this.props.searchValue !== "") {
-      requiredShops = <p>Ничего не найдено...</p>;
-    }
-    if (this.props.isLoadingData) {
-      return (
-        <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
-          <Spinner />
-        </Container>
-      );
-    }
+  }
+  if (requiredShops.length === 0 && props.searchValue !== "") {
+    requiredShops = <p>Ничего не найдено...</p>;
+  }
+  if (props.isLoadingData) {
     return (
-      <>
-        <Header goBack={this.goMainPage} title="Поиск" />
-        <Container className="SearchPage">
-          <SearchForm
-            {...this.props}
-            searchValue={this.props.searchValue}
-            changeSearchValue={this.props.changeSearchValue}
-          />
-          <ListGroup style={{ padding: "2vh", paddingTop: "5vh" }}>
-            {requiredShops}
-          </ListGroup>
-        </Container>
-        <section className="Black  BoxShadow">
-          <p>Нашли ошибку? Сообщите нам!</p>
-          <Button
-            variant="danger"
-            size="lg"
-            className="Button"
-            href="https://forms.gle/gRspoCUZuXFGzzXY8"
-          >
-            Сообщить об ошибке
-          </Button>
-        </section>
-      </>
+      <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
+        <Spinner />
+      </Container>
     );
   }
+  return (
+    <>
+      <Header goBack={goMainPage} title="Поиск" />
+      <Container className="SearchPage">
+        <SearchForm
+          {...props}
+          searchValue={props.searchValue}
+          changeSearchValue={props.changeSearchValue}
+        />
+        <ListGroup style={{ padding: "2vh", paddingTop: "5vh" }}>
+          {requiredShops}
+        </ListGroup>
+      </Container>
+      <section className="Black  BoxShadow">
+        <p>Нашли ошибку? Сообщите нам!</p>
+        <Button
+          variant="danger"
+          size="lg"
+          className="Button"
+          href="https://forms.gle/gRspoCUZuXFGzzXY8"
+        >
+          Сообщить об ошибке
+          </Button>
+      </section>
+    </>
+  );
 }
 
 export default SearchPage;

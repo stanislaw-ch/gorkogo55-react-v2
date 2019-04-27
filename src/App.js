@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 import Tabletop from "tabletop";
 
@@ -15,108 +15,105 @@ import "./App.css";
 //
 const spreadSheetKey = "1rg0Wkb4E1MccFnNJcasmn4uUwxNXDOs_ObeOC9MyYiM";
 
-class App extends Component {
-  state = {
-    searchValue: "",
-    data: [],
-    isLoading: true
-  };
+const app = props => {
+  const [isLoading, setLoading] = useState(true);
+  const [data, setData] = useState([]);
+  const [searchValue, setSearchValue] = useState('');
 
-  componentDidMount() {
+  useEffect(() => {
     Tabletop.init({
       key: spreadSheetKey,
       callback: googleData => {
-        // console.log('google sheet data --->', googleData);
-        this.setState({ data: googleData, isLoading: false });
+        setData(googleData);
+        setLoading(false);
       },
       simpleSheet: true
     });
-  }
+  })
 
-  changeSearchGroup = searchValue => {
-    this.setState({ searchValue });
-    this.props.history.push(`/search`);
+  const changeSearchGroup = searchValue => {
+    setSearchValue(searchValue)
+    props.history.push(`/search`);
   };
 
-  changeSearchValue = event => {
+  const changeSearchValue = event => {
     event.preventDefault();
-    this.setState({ searchValue: event.target.value });
+    setSearchValue(event.target.value);
   };
 
-  clearSearchValue = () => {
-    this.setState({ searchValue: "" });
+  const clearSearchValue = () => {
+    setSearchValue('');
   };
 
-  render() {
-    return (
-      <div className="App">
-        <main>
-          <Switch>
-            <Route
-              path="/"
-              exact
-              render={routeProps => (
-                <MainPage
-                  {...routeProps}
-                  isLoadingData={this.state.isLoading}
-                  searchValue={this.state.searchValue}
-                  clearSearchValue={this.clearSearchValue}
-                  changeSearchCategory={this.changeSearchGroup}
-                />
-              )}
-            />
-            <Route
-              path="/search"
-              render={routeProps => (
-                <SearchPage
-                  {...routeProps}
-                  hashTageSearch={this.changeSearchGroup}
-                  isLoadingData={this.state.isLoading}
-                  changeSearchValue={this.changeSearchValue}
-                  data={this.state.data}
-                  searchValue={this.state.searchValue}
-                />
-              )}
-            />
-            <Route
-              path="/shop/:id"
-              render={routeProps => (
-                <ShopPage
-                  {...routeProps}
-                  hashTageSearch={this.hashTagAddSearchValue}
-                  data={this.state.data}
-                  isLoadingData={this.state.isLoading}
-                />
-              )}
-            />
-          </Switch>
-        </main>
-        <footer>
-          {/* Yandex.Metrika informer */}
-          <a
-            href="https://metrika.yandex.ru/stat/?id=53046907&amp;from=informer"
-            target="_blank"
-            rel="nofollow"
-          >
-            <img
-              src="https://informer.yandex.ru/informer/53046907/3_1_FFFFFFFF_FFFFFFFF_0_pageviews"
-              style={{
-                width: "88px",
-                height: "31px",
-                border: 0
-              }}
-              alt="Яндекс.Метрика"
-              title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)"
-              className="ym-advanced-informer"
-              data-cid="53046907"
-              data-lang="ru"
-            />
-          </a>
-          {/* /Yandex.Metrika informer */}
-        </footer>
-      </div>
-    );
-  }
+  return (
+    <div className="App">
+      <main>
+        <Switch>
+          <Route
+            path="/"
+            exact
+            render={routeProps => (
+              <MainPage
+                {...routeProps}
+                isLoadingData={isLoading}
+                searchValue={searchValue}
+                clearSearchValue={clearSearchValue}
+                changeSearchCategory={changeSearchGroup}
+              />
+            )}
+          />
+          <Route
+            path="/search"
+            render={routeProps => (
+              <SearchPage
+                {...routeProps}
+                hashTageSearch={changeSearchGroup}
+                isLoadingData={isLoading}
+                changeSearchValue={changeSearchValue}
+                data={data}
+                searchValue={searchValue}
+              />
+            )}
+          />
+          <Route
+            path="/shop/:id"
+            render={routeProps => (
+              <ShopPage
+                {...routeProps}
+                hashTageSearch={changeSearchGroup}
+                data={data}
+                isLoadingData={isLoading}
+              />
+            )}
+          />
+        </Switch>
+      </main>
+      <footer>
+        {/* Yandex.Metrika informer */}
+        <a
+          href="https://metrika.yandex.ru/stat/?id=53046907&amp;from=informer"
+          target="_blank"
+          rel="nofollow"
+        >
+          <img
+            src="https://informer.yandex.ru/informer/53046907/3_1_FFFFFFFF_FFFFFFFF_0_pageviews"
+            style={{
+              width: "88px",
+              height: "31px",
+              border: 0
+            }}
+            alt="Яндекс.Метрика"
+            title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)"
+            className="ym-advanced-informer"
+            data-cid="53046907"
+            data-lang="ru"
+          />
+        </a>
+        {/* /Yandex.Metrika informer */}
+      </footer>
+    </div>
+  );
+
 }
 
-export default withRouter(App);
+export default withRouter(app);

@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import { Container } from "react-bootstrap";
 
 import ShopFull from "../../components/Shop/ShopFull";
@@ -7,23 +7,25 @@ import Spinner from "../../components/Spinner/Spinner";
 
 import "./ShopPage.css";
 
-class ShopPage extends Component {
-  componentDidMount() {
+const ShopPage = props => {
+
+  useEffect(() => {
     window.scrollTo(0, 0);
-  }
-  goSearchPage = () => {
-    this.props.history.push(`/search`);
+  }, [])
+
+  const goSearchPage = () => {
+    props.history.push(`/search`);
   };
 
-  renderShop = () => {
-    const selectedShop = this.props.data.filter(
-      shop => shop.number === this.props.match.params.id
+  const renderShop = () => {
+    const selectedShop = props.data.filter(
+      shop => shop.number === props.match.params.id
     );
 
     const shop = selectedShop[0];
     const shopComponent = shop ? (
       <ShopFull
-        hashTageSearch={this.props.hashTageSearch}
+        hashTageSearch={props.hashTageSearch}
         number={shop.number}
         title={shop.title}
         description={shop.description}
@@ -35,28 +37,26 @@ class ShopPage extends Component {
         route={shop.route}
       />
     ) : (
-      <p>Ищем информацию...</p>
-    );
+        <p>Ищем информацию...</p>
+      );
     return shopComponent;
   };
 
-  render() {
-    if (this.props.isLoadingData) {
-      return (
-        <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
-          <Spinner />
-        </Container>
-      );
-    }
+  if (props.isLoadingData) {
     return (
-      <>
-        <Header goBack={this.goSearchPage} title="Горького 55" />
-        <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
-          {this.renderShop()}
-        </Container>
-      </>
+      <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
+        <Spinner />
+      </Container>
     );
   }
+  return (
+    <>
+      <Header goBack={goSearchPage} title="Горького 55" />
+      <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
+        {renderShop()}
+      </Container>
+    </>
+  );
 }
 
 export default ShopPage;

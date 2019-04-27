@@ -29,7 +29,7 @@ const app = props => {
       },
       simpleSheet: true
     });
-  })
+  }, [])
 
   const changeSearchGroup = searchValue => {
     setSearchValue(searchValue)

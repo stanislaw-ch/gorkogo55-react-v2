@@ -29,7 +29,7 @@ const MainPage = props => {
         <div className="OptionsContainer">
           <div className="Options">
             <p className="Option">
-              <FaSearch className="Icon" />
+              <FaSearch className="Icon" onClick={onSearchForm} />
               Моментальный поиск
               </p>
             <p className="Option">
@@ -42,7 +42,7 @@ const MainPage = props => {
               </p>
           </div>
         </div>
-        <div>
+        {/* <div>
           <Button
             variant="light"
             size="lg"
@@ -51,7 +51,7 @@ const MainPage = props => {
           >
             Приступить к поиску
             </Button>
-        </div>
+        </div> */}
         <div className="Btns">
           <Button
             variant="light"

@@ -64,6 +64,7 @@ p {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
+  margin: 3vh 0 5vh 0;
 }
 
 .Category {

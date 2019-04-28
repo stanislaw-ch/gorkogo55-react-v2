@@ -28,8 +28,8 @@ const MainPage = props => {
       <section className="Brown BoxShadow">
         <div className="OptionsContainer">
           <div className="Options">
-            <p className="Option">
-              <FaSearch className="Icon" onClick={onSearchForm} />
+            <p className="Option" onClick={onSearchForm}>
+              <FaSearch className="Icon" />
               Моментальный поиск
               </p>
             <p className="Option">

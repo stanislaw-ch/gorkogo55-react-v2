@@ -1,6 +1,7 @@
 {
-  "name": "gorkogo55",
-  "short_name": "gorkogo55",
+  "background_color": "white",
+  "description": "Navigation of shopping mall gorkogo55",
+  "display": "fullscreen",
   "icons": [
     {
       "src": "/android-chrome-192x192.png",
@@ -13,7 +14,7 @@
       "type": "image/png"
     }
   ],
-  "theme_color": "#ffffff",
-  "background_color": "#ffffff",
-  "display": "standalone"
+  "name": "gorkogo55",
+  "short_name": "gorkogo55",
+  "start_url": "index.html"
 }

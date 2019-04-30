@@ -5,7 +5,7 @@ import Tabletop from "tabletop";
 import MainPage from "./containers/MainPage/MainPage";
 import SearchPage from "./containers/SearchPage/SearchPage";
 import ShopPage from "./containers/ShopPage/ShopPage";
-// import testData from "./data/shops.json";
+import testData from "./data/shops.json";
 import "./App.css";
 
 //
@@ -21,6 +21,11 @@ const app = props => {
   const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
+    setData(testData);
+    setLoading(false);
+  }, []);
+
+  useEffect(() => {
     Tabletop.init({
       key: spreadSheetKey,
       callback: googleData => {
@@ -30,6 +35,7 @@ const app = props => {
       simpleSheet: true
     });
   }, [])
+
 
   const changeSearchGroup = searchValue => {
     setSearchValue(searchValue)

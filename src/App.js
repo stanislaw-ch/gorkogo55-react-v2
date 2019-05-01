@@ -29,10 +29,9 @@ const app = props => {
     Tabletop.init({
       key: spreadSheetKey,
       callback: googleData => {
-        setData(googleData);
-        setLoading(false);
+        (googleData.length !== 0 && (setData(googleData) && setLoading(false)));
       },
-      simpleSheet: true
+      simpleSheet: true,
     });
   }, [])
 

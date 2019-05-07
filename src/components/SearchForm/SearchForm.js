@@ -5,7 +5,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 
 import "./SearchForm.css";
 
-const searchForm = ({ searchValue, changeSearchValue }) => {
+const searchForm = ({ searchValue, changeSearchValue } = {}) => {
   return (
     <Container>
       <ListGroup.Item className="SearchPanel">

@@ -6,19 +6,18 @@ import uniqueId from "lodash/uniqueId";
 
 import { capitalizeFirstLetter } from "./ShopInList";
 
-const shop = props => {
-  const {
-    number,
-    title,
-    description,
-    phone,
-    vk,
-    instagram,
-    website,
-    route,
-    hashTageSearch
-  } = props;
-  let keywords = props.keywords.split(", ");
+const shop = ({ number,
+  title,
+  description,
+  phone,
+  vk,
+  instagram,
+  website,
+  route,
+  hashTageSearch,
+  keywords } = {}) => {
+
+  keywords = keywords.split(", ");
   return (
     <Card>
       <Card.Body>

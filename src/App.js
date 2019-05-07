@@ -41,7 +41,6 @@ const app = props => {
   };
 
   const changeSearchValue = event => {
-    event.preventDefault();
     setSearchValue(event.target.value);
   };
 

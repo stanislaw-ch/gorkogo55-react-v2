@@ -8,8 +8,7 @@ export const capitalizeFirstLetter = string => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
-const Shop = props => {
-  const { number, title, description, onSelectShop } = props;
+const Shop = ({ number, title, description, onSelectShop }) => {
   return (
     <ListGroup.Item
       className="ShopCard"

@@ -16,24 +16,23 @@ import "./App.css";
 const spreadSheetKey = "1rg0Wkb4E1MccFnNJcasmn4uUwxNXDOs_ObeOC9MyYiM";
 
 const app = props => {
-  const [isLoading, setLoading] = useState(true);
+  const [isLoading, setLoading] = useState(false);
   const [data, setData] = useState([]);
   const [searchValue, setSearchValue] = useState('');
 
   useEffect(() => {
-    setData(testData);
-    setLoading(false);
-  }, []);
-
-  useEffect(() => {
+    setLoading(true)
     Tabletop.init({
       key: spreadSheetKey,
-      callback: googleData => {
-        (googleData.length !== 0 && (setData(googleData) && setLoading(false)));
-      },
+      callback: googleData => setDataFromGS(googleData),
       simpleSheet: true,
     });
   }, [])
+
+  const setDataFromGS = (sheets) => {
+    setLoading(false);
+    setData(sheets.length === 0 ? testData : sheets);
+  }
 
 
   const changeSearchGroup = searchValue => {
@@ -49,6 +48,7 @@ const app = props => {
   const clearSearchValue = () => {
     setSearchValue('');
   };
+
 
   return (
     <div className="App">

@@ -1,14 +1,14 @@
 import React from "react";
 import { FaAngleLeft } from "react-icons/fa";
 
-const header = props => {
+const header = ({ goBack, title }) => {
   return (
     <header className="Brown BoxShadow Header">
-      <div onClick={props.goBack} className="Icon">
+      <div onClick={goBack} className="Icon">
         <FaAngleLeft />
       </div>
       <div className="TitleHeader">
-        <p>{props.title}</p>
+        <p>{title}</p>
       </div>
       <div className="Icon Disabled">
         <FaAngleLeft />

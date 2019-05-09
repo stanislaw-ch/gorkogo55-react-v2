@@ -1,7 +1,7 @@
 import React from "react";
 import { FaAngleLeft } from "react-icons/fa";
 
-const header = ({ goBack, title } = {}) => {
+const header = ({ goBack = alert('wrong'), title = 'Горького55', ...props } = {}) => {
   return (
     <header className="Brown BoxShadow Header">
       <div onClick={goBack} className="Icon">

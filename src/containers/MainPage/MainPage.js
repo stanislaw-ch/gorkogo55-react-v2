@@ -21,6 +21,9 @@ const MainPage = props => {
         <p className="Title">Добро пожаловать в</p>
         <p>торговый центр «Две пятерки»</p>
       </header>
+      <section className="Black BoxShadow">
+        <p>Выберите категорию:</p>
+      </section>
       <section className="Separator">
         <div className="Btns">
           <Button

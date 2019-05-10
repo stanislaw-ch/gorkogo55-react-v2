@@ -59,13 +59,10 @@ p {
 }
 
 .Btns {
-  align-self: center;
-  width: 60vw;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 3vh 0 5vh 0;
+  justify-content: center;
 }
 
 .Category {

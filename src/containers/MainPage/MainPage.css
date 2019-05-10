@@ -49,7 +49,9 @@ p {
 }
 
 .Separator {
-  height: 60vh;
+  display: flex;
+  flex-direction: column-reverse;
+  min-height: 60vh;  
 }
 
 .BoxShadow {
@@ -59,6 +61,8 @@ p {
 }
 
 .Btns {
+  margin-top: 25px;
+  margin-bottom: 25px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

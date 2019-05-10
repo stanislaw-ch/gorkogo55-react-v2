@@ -129,7 +129,6 @@ const MainPage = props => {
           </div>
         </div>
       </section>
-      <section className="Separator" />
       <section className="Black BoxShadow">
         <p>Нашли ошибку? Сообщите нам!</p>
         <Button

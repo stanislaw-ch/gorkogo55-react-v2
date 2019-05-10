@@ -44,7 +44,7 @@ const MainPage = props => {
         </div>
         <div className="Btns">
           <Button
-            variant="danger"
+            variant="light"
             // size="lg"
             className="Button"
             onClick={() =>
@@ -54,7 +54,7 @@ const MainPage = props => {
             Мебель и предметы интерьера
             </Button>
           <Button
-            variant="danger"
+            variant="light"
             // size="lg"
             className="Button"
             onClick={() =>
@@ -64,7 +64,7 @@ const MainPage = props => {
             Техника и электроника
             </Button>
           <Button
-            variant="danger"
+            variant="light"
             // size="lg"
             className="Button"
             onClick={() => props.changeSearchCategory("Обувь и сумки")}
@@ -72,7 +72,7 @@ const MainPage = props => {
             Обувь и сумки
             </Button>
           <Button
-            variant="danger"
+            variant="light"
             // size="lg"
             className="Button"
             onClick={() =>
@@ -82,7 +82,7 @@ const MainPage = props => {
             Кафе и развлечения
             </Button>
           <Button
-            variant="danger"
+            variant="light"
             // size="lg"
             className="Button"
             onClick={() =>
@@ -92,7 +92,7 @@ const MainPage = props => {
             Сувениры и подарки
             </Button>
           <Button
-            variant="danger"
+            variant="light"
             // size="lg"
             className="Button"
             onClick={() =>
@@ -102,7 +102,7 @@ const MainPage = props => {
             Красота и здоровье
             </Button>
           <Button
-            variant="danger"
+            variant="light"
             // size="lg"
             className="Button"
             onClick={() => props.changeSearchCategory("одежда")}
@@ -110,7 +110,7 @@ const MainPage = props => {
             Одежда
             </Button>
           <Button
-            variant="danger"
+            variant="light"
             // size="lg"
             className="Button"
             onClick={() =>
@@ -120,7 +120,7 @@ const MainPage = props => {
             Белье и одежда для дома
             </Button>
           <Button
-            variant="danger"
+            variant="light"
             // size="lg"
             className="Button"
             onClick={() => props.changeSearchCategory("Услуги")}
@@ -128,7 +128,7 @@ const MainPage = props => {
             Услуги
             </Button>
           <Button
-            variant="danger"
+            variant="light"
             // size="lg"
             className="Button"
             onClick={() => props.changeSearchCategory("Туалет")}
@@ -141,7 +141,7 @@ const MainPage = props => {
       <section className="Black  BoxShadow">
         <p>Нашли ошибку? Сообщите нам!</p>
         <Button
-          variant="danger"
+          variant="light"
           size="lg"
           className="Button"
           href="https://forms.gle/gRspoCUZuXFGzzXY8"

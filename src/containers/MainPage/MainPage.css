@@ -23,9 +23,10 @@ p {
 }
 
 .Button {
-  margin-top: 5vh;
-  padding: 3vh;
-  margin: 5vh 1vw 0 1vw;
+  margin: 10px;
+  -webkit-box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.75) !important;
+  -moz-box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.75) !important;
+  box-shadow: 0px 0px 8px 0px rgba(255, 255, 255, 0.75) !important;
 }
 .OptionsContainer {
   display: flex;
@@ -48,7 +49,9 @@ p {
 }
 
 .Separator {
-  height: 60vh;
+  display: flex;
+  flex-direction: column-reverse;
+  min-height: 60vh;  
 }
 
 .BoxShadow {
@@ -58,13 +61,12 @@ p {
 }
 
 .Btns {
-  align-self: center;
-  width: 60vw;
+  margin-top: 25px;
+  margin-bottom: 25px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-around;
-  margin: 3vh 0 5vh 0;
+  justify-content: center;
 }
 
 .Category {

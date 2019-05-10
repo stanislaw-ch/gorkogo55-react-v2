@@ -21,7 +21,93 @@ const MainPage = props => {
         <p className="Title">Добро пожаловать в</p>
         <p>торговый центр «Две пятерки»</p>
       </header>
-      <section className="Separator" />
+      <section className="Separator">
+        <div className="Btns">
+          <Button
+              variant="light"
+              className="Button"
+              onClick={() =>
+                props.changeSearchCategory("Мебель и предметы интерьера")
+              }
+            >
+              Мебель и предметы интерьера
+              </Button>
+            <Button
+              variant="light"
+              className="Button"
+              onClick={() =>
+                props.changeSearchCategory("Техника и электроника")
+              }
+            >
+              Техника и электроника
+              </Button>
+            <Button
+              variant="light"
+              className="Button"
+              onClick={() => props.changeSearchCategory("Обувь и сумки")}
+            >
+              Обувь и сумки
+              </Button>
+            <Button
+              variant="light"
+              className="Button"
+              onClick={() =>
+                props.changeSearchCategory("Кафе и развлечения")
+              }
+            >
+              Кафе и развлечения
+              </Button>
+            <Button
+              variant="light"
+              className="Button"
+              onClick={() =>
+                props.changeSearchCategory("Сувениры и подарки")
+              }
+            >
+              Сувениры и подарки
+              </Button>
+            <Button
+              variant="light"
+              className="Button"
+              onClick={() =>
+                props.changeSearchCategory("Красота и здоровье")
+              }
+            >
+              Красота и здоровье
+              </Button>
+            <Button
+              variant="light"
+              className="Button"
+              onClick={() => props.changeSearchCategory("одежда")}
+            >
+              Одежда
+              </Button>
+            <Button
+              variant="light"
+              className="Button"
+              onClick={() =>
+                props.changeSearchCategory("Белье и одежда для дома")
+              }
+            >
+              Белье и одежда для дома
+              </Button>
+            <Button
+              variant="light"
+              className="Button"
+              onClick={() => props.changeSearchCategory("Услуги")}
+            >
+              Услуги
+              </Button>
+            <Button
+              variant="light"
+              className="Button"
+              onClick={() => props.changeSearchCategory("Туалет")}
+            >
+              Туалет
+            </Button>
+        </div>        
+      </section>
+      
       <section className="Black BoxShadow">
         <p>Все товары и услуги в одном месте</p>
       </section>

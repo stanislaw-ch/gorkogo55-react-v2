@@ -9,8 +9,8 @@ body {
 }
 
 .Black {
-  padding-top: 10vh;
-  padding-bottom: 10vh;
+  padding-top: 15px;
+  padding-bottom: 15px;
   background-color: black;
   color: rgb(252, 237, 237);
 }

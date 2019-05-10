@@ -42,16 +42,6 @@ const MainPage = props => {
               </p>
           </div>
         </div>
-        {/* <div>
-          <Button
-            variant="light"
-            size="lg"
-            className="Button"
-            onClick={onSearchForm}
-          >
-            Приступить к поиску
-            </Button>
-        </div> */}
         <div className="Btns">
           <Button
             variant="dark"

@@ -4,6 +4,7 @@ import { FaSearch } from "react-icons/fa";
 import { FiPhone, FiAlertCircle } from "react-icons/fi";
 
 // import Spinner from "../../components/Spinner/Spinner";
+import Categories from '../../components/Categories/Categories';
 import classes from "./MainPage.module.css";
 
 const MainPage = props => {
@@ -25,7 +26,8 @@ const MainPage = props => {
         <p>Выберите категорию:</p>
       </section>
       <section className={classes.Separator}>
-        <div className={classes.Btns}>
+        <Categories changeSearchCategory={props.changeSearchCategory} />
+        {/* <div className={classes.Btns}>
           <Button
             variant="light"
             className={classes.Button}
@@ -108,7 +110,7 @@ const MainPage = props => {
           >
             Туалет
             </Button>
-        </div>
+        </div> */}
       </section>
 
       <section className={[classes.Black, classes.BoxShadow].join(' ')}>

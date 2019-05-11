@@ -6,7 +6,8 @@ import MainPage from "./containers/MainPage/MainPage";
 import SearchPage from "./containers/SearchPage/SearchPage";
 import ShopPage from "./containers/ShopPage/ShopPage";
 import testData from "./data/shops.json";
-import "./App.css";
+
+import classes from "./App.module.css";
 
 //
 // NOTE!
@@ -50,7 +51,7 @@ const app = props => {
 
 
   return (
-    <div className="App">
+    <div className={classes.App}>
       <main>
         <Switch>
           <Route

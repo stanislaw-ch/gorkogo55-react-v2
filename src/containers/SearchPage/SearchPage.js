@@ -8,7 +8,8 @@ import ShopInList from "../../components/Shop/ShopInList";
 import ShopFull from "../../components/Shop/ShopFull";
 import Spinner from "../../components/Spinner/Spinner";
 
-import "./SearchPage.css";
+// import "./SearchPage.css";
+import classes from './SearchPage.module.css';
 
 const SearchPage = props => {
 
@@ -92,7 +93,7 @@ const SearchPage = props => {
   return (
     <>
       <Header goBack={goMainPage} title="Поиск" />
-      <Container className="SearchPage">
+      <Container className={classes.SearchPage}>
         <SearchForm
           {...props}
           searchValue={props.searchValue}
@@ -102,12 +103,12 @@ const SearchPage = props => {
           {requiredShops}
         </ListGroup>
       </Container>
-      <section className="Black  BoxShadow">
+      <section className={[classes.Black, classes.BoxShadow].join(' ')}>
         <p>Нашли ошибку? Сообщите нам!</p>
         <Button
           variant="danger"
           size="lg"
-          className="Button"
+          className={classes.Button}
           href="https://forms.gle/gRspoCUZuXFGzzXY8"
         >
           Сообщить об ошибке

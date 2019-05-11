@@ -5,7 +5,6 @@ import ShopFull from "../../components/Shop/ShopFull";
 import Header from "../../components/Header/Header";
 import Spinner from "../../components/Spinner/Spinner";
 
-import "./ShopPage.css";
 
 const ShopPage = props => {
 

@@ -4,7 +4,7 @@ import { FaSearch } from "react-icons/fa";
 import { FiPhone, FiAlertCircle } from "react-icons/fi";
 
 // import Spinner from "../../components/Spinner/Spinner";
-import "./MainPage.css";
+import classes from "./MainPage.module.css";
 
 const MainPage = props => {
   useEffect(() => {
@@ -16,128 +16,128 @@ const MainPage = props => {
   };
 
   return (
-    <section className="Main">
-      <header className="Brown BoxShadow">
-        <p className="Title">Добро пожаловать в</p>
+    <section className={classes.Main}>
+      <header className={[classes.Brown, classes.BoxShadow].join(' ')}>
+        <p className={classes.Title}>Добро пожаловать в</p>
         <p>торговый центр «Две пятерки»</p>
       </header>
-      <section className="Black BoxShadow">
+      <section className={[classes.Black, classes.BoxShadow].join(' ')}>
         <p>Выберите категорию:</p>
       </section>
-      <section className="Separator">
-        <div className="Btns">
+      <section className={classes.Separator}>
+        <div className={classes.Btns}>
           <Button
-              variant="light"
-              className="Button"
-              onClick={() =>
-                props.changeSearchCategory("Мебель и предметы интерьера")
-              }
-            >
-              Мебель и предметы интерьера
+            variant="light"
+            className={classes.Button}
+            onClick={() =>
+              props.changeSearchCategory("Мебель и предметы интерьера")
+            }
+          >
+            Мебель и предметы интерьера
               </Button>
-            <Button
-              variant="light"
-              className="Button"
-              onClick={() =>
-                props.changeSearchCategory("Техника и электроника")
-              }
-            >
-              Техника и электроника
+          <Button
+            variant="light"
+            className={classes.Button}
+            onClick={() =>
+              props.changeSearchCategory("Техника и электроника")
+            }
+          >
+            Техника и электроника
               </Button>
-            <Button
-              variant="light"
-              className="Button"
-              onClick={() => props.changeSearchCategory("Обувь и сумки")}
-            >
-              Обувь и сумки
+          <Button
+            variant="light"
+            className={classes.Button}
+            onClick={() => props.changeSearchCategory("Обувь и сумки")}
+          >
+            Обувь и сумки
               </Button>
-            <Button
-              variant="light"
-              className="Button"
-              onClick={() =>
-                props.changeSearchCategory("Кафе и развлечения")
-              }
-            >
-              Кафе и развлечения
+          <Button
+            variant="light"
+            className={classes.Button}
+            onClick={() =>
+              props.changeSearchCategory("Кафе и развлечения")
+            }
+          >
+            Кафе и развлечения
               </Button>
-            <Button
-              variant="light"
-              className="Button"
-              onClick={() =>
-                props.changeSearchCategory("Сувениры и подарки")
-              }
-            >
-              Сувениры и подарки
+          <Button
+            variant="light"
+            className={classes.Button}
+            onClick={() =>
+              props.changeSearchCategory("Сувениры и подарки")
+            }
+          >
+            Сувениры и подарки
               </Button>
-            <Button
-              variant="light"
-              className="Button"
-              onClick={() =>
-                props.changeSearchCategory("Красота и здоровье")
-              }
-            >
-              Красота и здоровье
+          <Button
+            variant="light"
+            className={classes.Button}
+            onClick={() =>
+              props.changeSearchCategory("Красота и здоровье")
+            }
+          >
+            Красота и здоровье
               </Button>
-            <Button
-              variant="light"
-              className="Button"
-              onClick={() => props.changeSearchCategory("одежда")}
-            >
-              Одежда
+          <Button
+            variant="light"
+            className={classes.Button}
+            onClick={() => props.changeSearchCategory("одежда")}
+          >
+            Одежда
               </Button>
-            <Button
-              variant="light"
-              className="Button"
-              onClick={() =>
-                props.changeSearchCategory("Белье и одежда для дома")
-              }
-            >
-              Белье и одежда для дома
+          <Button
+            variant="light"
+            className={classes.Button}
+            onClick={() =>
+              props.changeSearchCategory("Белье и одежда для дома")
+            }
+          >
+            Белье и одежда для дома
               </Button>
-            <Button
-              variant="light"
-              className="Button"
-              onClick={() => props.changeSearchCategory("Услуги")}
-            >
-              Услуги
+          <Button
+            variant="light"
+            className={classes.Button}
+            onClick={() => props.changeSearchCategory("Услуги")}
+          >
+            Услуги
               </Button>
-            <Button
-              variant="light"
-              className="Button"
-              onClick={() => props.changeSearchCategory("Туалет")}
-            >
-              Туалет
+          <Button
+            variant="light"
+            className={classes.Button}
+            onClick={() => props.changeSearchCategory("Туалет")}
+          >
+            Туалет
             </Button>
-        </div>        
+        </div>
       </section>
-      
-      <section className="Black BoxShadow">
+
+      <section className={[classes.Black, classes.BoxShadow].join(' ')}>
         <p>Все товары и услуги в одном месте</p>
       </section>
-      <section className="Brown BoxShadow">
-        <div className="OptionsContainer">
-          <div className="Options">
-            <p className="Option" onClick={onSearchForm}>
-              <FaSearch className="Icon" />
+      <section className={[classes.Brown, classes.BoxShadow].join(' ')}>
+        <div className={classes.OptionsContainer}>
+          <div className={classes.Options}>
+            <p className={classes.Option} onClick={onSearchForm}>
+              <FaSearch className={classes.Icon} />
               Моментальный поиск
               </p>
-            <p className="Option">
-              <FiPhone className="Icon" />
+            <p className={classes.Option}>
+              <FiPhone className={classes.Icon} />
               Звонок в один клик
               </p>
-            <p className="Option">
-              <FiAlertCircle className="Icon" />
+            <p className={classes.Option}>
+              <FiAlertCircle className={classes.Icon} />
               Вся информация под рукой
               </p>
           </div>
         </div>
       </section>
-      <section className="Black BoxShadow">
+      <section className={[classes.Black, classes.BoxShadow].join(' ')}>
         <p>Нашли ошибку? Сообщите нам!</p>
         <Button
           variant="light"
           size="lg"
-          className="Button"
+          className={classes.Button}
           href="https://forms.gle/gRspoCUZuXFGzzXY8"
         >
           Сообщить об ошибке

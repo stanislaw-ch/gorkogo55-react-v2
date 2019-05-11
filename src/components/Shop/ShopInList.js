@@ -2,7 +2,7 @@ import React from "react";
 import ListGroup from "react-bootstrap/ListGroup";
 import { FaShoppingCart, FaAngleRight } from "react-icons/fa";
 
-import "./ShopList.css";
+import classes from "./ShopList.module.css";
 
 export const capitalizeFirstLetter = string => {
   return string.charAt(0).toUpperCase() + string.slice(1);
@@ -11,22 +11,22 @@ export const capitalizeFirstLetter = string => {
 const Shop = ({ number, title, description, onSelectShop }) => {
   return (
     <ListGroup.Item
-      className="ShopCard"
+      className={classes["ShopCard"]}
       onClick={() => onSelectShop(number)}
       action
     >
-      <div className="Icon">
+      <div className={classes["Icon"]}>
         <FaShoppingCart />
       </div>
-      <div className="Text">
-        <p className="NameShop">
+      <div className={classes["Text"]}>
+        <p className={classes["NameShop"]}>
           {number}. {capitalizeFirstLetter(title)}
         </p>
         {description && description !== "-" ? (
           <p className="Description">{capitalizeFirstLetter(description)}. </p>
         ) : null}
       </div>
-      <div className="Icon">
+      <div className={classes["Icon"]}>
         <FaAngleRight />
       </div>
     </ListGroup.Item>

@@ -21,7 +21,7 @@ const Categories = props => {
             variant="light"
             className={classes.Button}
             onClick={() =>
-                props.changeSearchCategory({ cat })
+                props.changeSearchCategory(cat)
             }
             key={uniqueId()}
         >{cat}</Button>));

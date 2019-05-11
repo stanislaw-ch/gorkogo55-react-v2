@@ -11,22 +11,22 @@ export const capitalizeFirstLetter = string => {
 const Shop = ({ number, title, description, onSelectShop }) => {
   return (
     <ListGroup.Item
-      className={classes["ShopCard"]}
+      className={classes.ShopCard}
       onClick={() => onSelectShop(number)}
       action
     >
-      <div className={classes["Icon"]}>
+      <div className={classes.Icon}>
         <FaShoppingCart />
       </div>
-      <div className={classes["Text"]}>
-        <p className={classes["NameShop"]}>
+      <div className={classes.Text}>
+        <p className={classes.NameShop}>
           {number}. {capitalizeFirstLetter(title)}
         </p>
         {description && description !== "-" ? (
-          <p className="Description">{capitalizeFirstLetter(description)}. </p>
+          <p className={classes.Description}>{capitalizeFirstLetter(description)}. </p>
         ) : null}
       </div>
-      <div className={classes["Icon"]}>
+      <div className={classes.Icon}>
         <FaAngleRight />
       </div>
     </ListGroup.Item>

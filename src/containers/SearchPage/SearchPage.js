@@ -58,6 +58,7 @@ const SearchPage = props => {
         title={item.title}
         description={item.description}
         keywords={item.keywords}
+        logo={item.logo}
       />
     );
   });

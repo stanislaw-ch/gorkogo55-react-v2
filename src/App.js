@@ -98,7 +98,7 @@ const App = props => {
         <a
           href="https://metrika.yandex.ru/stat/?id=53046907&amp;from=informer"
           target="_blank"
-          rel="nofollow"
+          rel='noopener noreferrer'
         >
           <img
             src="https://informer.yandex.ru/informer/53046907/3_1_FFFFFFFF_FFFFFFFF_0_pageviews"

@@ -16,7 +16,7 @@ import classes from "./App.module.css";
 //
 const spreadSheetKey = "1rg0Wkb4E1MccFnNJcasmn4uUwxNXDOs_ObeOC9MyYiM";
 
-const app = props => {
+const App = props => {
   const [isLoading, setLoading] = useState(false);
   const [data, setData] = useState([]);
   const [searchValue, setSearchValue] = useState('');
@@ -121,4 +121,4 @@ const app = props => {
 
 }
 
-export default withRouter(app);
+export default withRouter(App);

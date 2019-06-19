@@ -13,7 +13,6 @@ const Shop = ({
   title,
   description,
   onSelectShop,
-  logo
 } = {}) => {
   return (
     <ListGroup.Item
@@ -31,7 +30,6 @@ const Shop = ({
         {description && description !== "-" ? (
           <p className={classes.Description}>{capitalizeFirstLetter(description)}. </p>
         ) : null}
-        <img src={logo} alt="" />
       </div>
       <div className={classes.Icon}>
         <FaAngleRight />

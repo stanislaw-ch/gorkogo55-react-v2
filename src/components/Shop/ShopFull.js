@@ -45,7 +45,7 @@ const shop = ({ number,
         ) : null}
         {phone && phone !== "-" ? (
           <>
-            <p>Телефон: {phone}</p>
+            <p style={{ marginBottom: "10px" }}>Телефон: {phone}</p>
             <Card.Text>
               <Button href={`tel:${phone}`} variant="success">
                 <MdPhoneForwarded /> Позвонить

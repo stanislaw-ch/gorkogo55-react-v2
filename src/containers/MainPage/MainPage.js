@@ -49,7 +49,7 @@ const MainPage = props => {
           </div>
         </div>
       </section>
-      <section className={[classes.Black, classes.BoxShadow].join(' ')}>
+      {/* <section className={[classes.Black, classes.BoxShadow].join(' ')}>
         <p>Нашли ошибку? Сообщите нам!</p>
         <Button
           variant="light"
@@ -59,7 +59,7 @@ const MainPage = props => {
         >
           Сообщить об ошибке
           </Button>
-      </section>
+      </section> */}
     </section>
   );
 }

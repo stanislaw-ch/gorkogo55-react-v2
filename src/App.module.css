@@ -15,7 +15,7 @@ main {
 footer {
   margin-top: 7vh;
   padding-top: 30px;
-  padding-bottom: 30px;
+  /* padding-bottom: 30px; */
   background-color: #491516;
 }
 main:before {
@@ -32,4 +32,15 @@ main:before {
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+}
+.Black {
+  padding-top: 10vh;
+  padding-bottom: 10vh;
+  background-color: black;
+  color: rgb(252, 237, 237);
+}
+.BoxShadow {
+  -webkit-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
 }

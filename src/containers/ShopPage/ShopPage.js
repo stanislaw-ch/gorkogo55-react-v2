@@ -5,12 +5,10 @@ import ShopFull from "../../components/Shop/ShopFull";
 import Header from "../../components/Header/Header";
 import Spinner from "../../components/Spinner/Spinner";
 
-
 const ShopPage = props => {
-
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [])
+  }, []);
 
   const goSearchPage = () => {
     props.history.push(`/search`);
@@ -36,8 +34,8 @@ const ShopPage = props => {
         route={shop.route}
       />
     ) : (
-        <p>Ищем информацию...</p>
-      );
+      <p>Ищем информацию...</p>
+    );
     return shopComponent;
   };
 
@@ -50,12 +48,16 @@ const ShopPage = props => {
   }
   return (
     <>
-      <Header goBack={goSearchPage} title="Горького 55" />
+      <Header
+        goBack={goSearchPage}
+        title="Горького 55"
+        history={props.history}
+      />
       <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
         {renderShop()}
       </Container>
     </>
   );
-}
+};
 
 export default ShopPage;

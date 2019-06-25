@@ -9,13 +9,12 @@ import ShopFull from "../../components/Shop/ShopFull";
 import Spinner from "../../components/Spinner/Spinner";
 
 // import "./SearchPage.css";
-import classes from './SearchPage.module.css';
+import classes from "./SearchPage.module.css";
 
 const SearchPage = props => {
-
   useEffect(() => {
     window.scrollTo(0, 0);
-  }, [])
+  }, []);
 
   const goMainPage = () => {
     props.history.push(`/`);
@@ -34,15 +33,11 @@ const SearchPage = props => {
     // TODO: Update search algorithm here and delete this message!
     result =
       item.title.toLowerCase().includes(props.searchValue.toLowerCase()) ||
-      item.keywords
-        .toLowerCase()
-        .includes(props.searchValue.toLowerCase()) ||
+      item.keywords.toLowerCase().includes(props.searchValue.toLowerCase()) ||
       item.description
         .toLowerCase()
         .includes(props.searchValue.toLowerCase()) ||
-      item.category
-        .toLowerCase()
-        .includes(props.searchValue.toLowerCase());
+      item.category.toLowerCase().includes(props.searchValue.toLowerCase());
 
     return result;
   };
@@ -93,7 +88,7 @@ const SearchPage = props => {
   }
   return (
     <>
-      <Header goBack={goMainPage} title="Поиск" />
+      <Header goBack={goMainPage} title="Поиск" history={props.history} />
       <Container className={classes.SearchPage}>
         <SearchForm
           {...props}
@@ -104,7 +99,7 @@ const SearchPage = props => {
           {requiredShops}
         </ListGroup>
       </Container>
-      <section className={[classes.Black, classes.BoxShadow].join(' ')}>
+      <section className={[classes.Black, classes.BoxShadow].join(" ")}>
         <p>Нашли ошибку? Сообщите нам!</p>
         <Button
           variant="danger"
@@ -113,10 +108,10 @@ const SearchPage = props => {
           href="https://forms.gle/gRspoCUZuXFGzzXY8"
         >
           Сообщить об ошибке
-          </Button>
+        </Button>
       </section>
     </>
   );
-}
+};
 
 export default SearchPage;

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { FaAngleLeft } from "react-icons/fa";
 
 import classes from "./Header.module.css";
@@ -10,9 +11,17 @@ const header = ({
   ...props
 } = {}) => {
   var pathname = history.location.pathname;
-  var href = "";
+  var goBackElement = (
+    <Link to="/search">
+      <FaAngleLeft />
+    </Link>
+  );
   if (pathname == "/search") {
-    href = "http://gorkogo55.ru/";
+    goBackElement = (
+      <a href="http://gorkogo55.ru/">
+        <FaAngleLeft />
+      </a>
+    );
   }
   return (
     <header
@@ -22,9 +31,7 @@ const header = ({
         onClick={pathname != "/search" ? goBack : null}
         className={classes.Icon}
       >
-        <a href={href}>
-          <FaAngleLeft />
-        </a>
+        {goBackElement}
       </div>
       <div className={classes.TitleHeader}>
         <p>{title}</p>

@@ -12,6 +12,7 @@
     "react-icons": "^3.5.0",
     "react-router-dom": "^4.4.0",
     "react-scripts": "2.1.8",
+    "react-yandex-metrika": "^2.5.1",
     "tabletop": "^1.5.2"
   },
   "scripts": {

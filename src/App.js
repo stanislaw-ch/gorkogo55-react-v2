@@ -19,25 +19,24 @@ const spreadSheetKey = "1rg0Wkb4E1MccFnNJcasmn4uUwxNXDOs_ObeOC9MyYiM";
 const App = props => {
   const [isLoading, setLoading] = useState(false);
   const [data, setData] = useState([]);
-  const [searchValue, setSearchValue] = useState('');
+  const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     Tabletop.init({
       key: spreadSheetKey,
       callback: googleData => setDataFromGS(googleData),
-      simpleSheet: true,
+      simpleSheet: true
     });
-  }, [])
+  }, []);
 
-  const setDataFromGS = (sheets) => {
+  const setDataFromGS = sheets => {
     setLoading(false);
     setData(sheets.length === 0 ? testData : sheets);
-  }
-
+  };
 
   const changeSearchGroup = searchValue => {
-    setSearchValue(searchValue)
+    setSearchValue(searchValue);
     props.history.push(`/search`);
   };
 
@@ -46,9 +45,8 @@ const App = props => {
   };
 
   const clearSearchValue = () => {
-    setSearchValue('');
+    setSearchValue("");
   };
-
 
   return (
     <div className={classes.App}>
@@ -95,11 +93,11 @@ const App = props => {
       </main>
       <footer>
         {/* Yandex.Metrika informer */}
-        <section className={[classes.Black, classes.BoxShadow].join(' ')}>
+        <section className={[classes.Black, classes.BoxShadow].join(" ")}>
           <a
             href="https://metrika.yandex.ru/stat/?id=53046907&amp;from=informer"
             target="_blank"
-            rel='noopener noreferrer'
+            rel="noopener noreferrer"
           >
             <img
               src="https://informer.yandex.ru/informer/53046907/3_1_FFFFFFFF_FFFFFFFF_0_pageviews"
@@ -120,7 +118,6 @@ const App = props => {
       </footer>
     </div>
   );
-
-}
+};
 
 export default withRouter(App);

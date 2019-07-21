@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 import Tabletop from "tabletop";
+import ym from "react-yandex-metrika";
 
 import MainPage from "./containers/MainPage/MainPage";
 import SearchPage from "./containers/SearchPage/SearchPage";
@@ -42,6 +43,9 @@ const App = props => {
 
   const changeSearchValue = event => {
     setSearchValue(event.target.value);
+    if (searchValue.length >= 3) {
+      ym(54289579, "reachGoal", "useInput");
+    }
   };
 
   const clearSearchValue = () => {

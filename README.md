@@ -1,5 +1,16 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Начало работы
+
+Для запуска проекта на локальном компьютере, выполните команды:
+
+```bash
+git clone https://github.com/VadimCpp/gorkogo55.git gorkogo55
+cd gorkogo55
+npm i
+npm start
+```
+
 ## Available Scripts
 
 In the project directory, you can run:

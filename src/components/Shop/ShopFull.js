@@ -15,9 +15,8 @@ const shop = ({
   website = "www.gorkogo.55",
   route = "gorkogo55",
   hashTageSearch = "gorkogo55",
-  keywords,
-  ...props
-} = {}) => {
+  keywords
+}) => {
   keywords = keywords.split(", ");
   return (
     <Card>

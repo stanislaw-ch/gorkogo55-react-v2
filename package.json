@@ -19,6 +19,7 @@
     "dev": "parcel public/index.html",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "clear-build-cache": "rm -rf .cache/ dist/",
+    "lint": "tslint --project",
     "build": "parcel build public/index.html",
     "test": "react-scripts test"
   },

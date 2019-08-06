@@ -5,6 +5,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "core-js": "3",
+    "parcel-bundler": "^1.12.3",
     "popper.js": "^1.14.7",
     "react": "^16.8.4",
     "react-bootstrap": "^1.0.0-beta.5",
@@ -16,7 +17,7 @@
     "tabletop": "^1.5.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "parcel public/index.html",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

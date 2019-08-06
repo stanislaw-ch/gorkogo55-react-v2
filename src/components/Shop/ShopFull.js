@@ -2,21 +2,22 @@ import React from "react";
 import { Card, Button } from "react-bootstrap";
 import { FaVk, FaInstagram } from "react-icons/fa";
 import { MdPhoneForwarded } from "react-icons/md";
-import uniqueId from "lodash/uniqueId";
 
 import { capitalizeFirstLetter } from "./ShopInList";
 
-const shop = ({ number,
-  title = 'shop',
-  description = 'shop in gorkogo55',
-  phone = '777-777',
-  vk = 'vk.ru',
-  instagram = 'instagramm.com',
-  website = 'www.gorkogo.55',
-  route = 'gorkogo55',
-  hashTageSearch = 'gorkogo55',
-  keywords, ...props } = {}) => {
-
+const shop = ({
+  number,
+  title = "shop",
+  description = "shop in gorkogo55",
+  phone = "777-777",
+  vk = "vk.ru",
+  instagram = "instagramm.com",
+  website = "www.gorkogo.55",
+  route = "gorkogo55",
+  hashTageSearch = "gorkogo55",
+  keywords,
+  ...props
+} = {}) => {
   keywords = keywords.split(", ");
   return (
     <Card>
@@ -35,7 +36,7 @@ const shop = ({ number,
                 <Button
                   variant="link"
                   onClick={() => hashTageSearch(kw)}
-                  key={uniqueId()}
+                  key={Math.random()}
                 >
                   #{kw}{" "}
                 </Button>

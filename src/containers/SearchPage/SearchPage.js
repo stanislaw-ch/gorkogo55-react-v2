@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Container, ListGroup, Button } from "react-bootstrap";
-import uniqueId from "lodash/uniqueId";
 
 import Header from "../../components/Header/Header";
 import SearchForm from "../../components/SearchForm/SearchForm";
@@ -48,7 +47,7 @@ const SearchPage = props => {
     return (
       <ShopInList
         onSelectShop={selectShop}
-        key={uniqueId()}
+        key={Math.random()}
         number={item.number}
         title={item.title}
         description={item.description}
@@ -62,7 +61,7 @@ const SearchPage = props => {
       return (
         <ShopFull
           hashTageSearch={props.hashTageSearch}
-          key={uniqueId()}
+          key={Math.random()}
           number={shop.number}
           title={shop.title}
           description={shop.description}

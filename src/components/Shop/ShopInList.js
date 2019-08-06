@@ -8,12 +8,7 @@ export const capitalizeFirstLetter = string => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
-const Shop = ({
-  number,
-  title,
-  description,
-  onSelectShop,
-} = {}) => {
+const Shop = ({ number, title, description, onSelectShop }) => {
   return (
     <ListGroup.Item
       className={classes.ShopCard}
@@ -28,7 +23,9 @@ const Shop = ({
           {number}. {capitalizeFirstLetter(title)}
         </p>
         {description && description !== "-" ? (
-          <p className={classes.Description}>{capitalizeFirstLetter(description)}. </p>
+          <p className={classes.Description}>
+            {capitalizeFirstLetter(description)}.{" "}
+          </p>
         ) : null}
       </div>
       <div className={classes.Icon}>

@@ -18,9 +18,10 @@
   },
   "scripts": {
     "dev": "parcel public/index.html",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
+    "clear-build-cache": "rm -rf .cache/ dist/",
+    "build": "parcel build public/index.html",
+    "test": "react-scripts test"
   },
   "eslintConfig": {
     "extends": "react-app"

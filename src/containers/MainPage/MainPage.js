@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import { FiPhone, FiAlertCircle } from "react-icons/fi";
 
-import Categories from "../../components/Categories/Categories";
+import Categories from "../../components/Categories/Categories.tsx";
 import classes from "./MainPage.module.css";
 
 const MainPage = props => {

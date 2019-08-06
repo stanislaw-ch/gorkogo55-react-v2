@@ -4,12 +4,7 @@ import { FaAngleLeft } from "react-icons/fa";
 
 import classes from "./Header.module.css";
 
-const header = ({
-  goBack = alert("wrong"),
-  title = "Горького55",
-  history,
-  ...props
-} = {}) => {
+const header = ({ goBack = alert("wrong"), title = "Горького55", history }) => {
   var pathname = history.location.pathname;
   var goBackElement = (
     <Link to="/search">

@@ -15,11 +15,10 @@ const ShopPage = props => {
   };
 
   const renderShop = () => {
-    const selectedShop = props.data.filter(
+    const [shop] = props.data.filter(
       shop => shop.number === props.match.params.id
     );
 
-    const shop = selectedShop[0];
     const shopComponent = shop ? (
       <ShopFull
         hashTageSearch={props.hashTageSearch}

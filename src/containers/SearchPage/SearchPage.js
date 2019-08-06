@@ -7,7 +7,6 @@ import ShopInList from "../../components/Shop/ShopInList";
 import ShopFull from "../../components/Shop/ShopFull";
 import Spinner from "../../components/Spinner/Spinner";
 
-// import "./SearchPage.css";
 import classes from "./SearchPage.module.css";
 
 const SearchPage = props => {
@@ -23,22 +22,15 @@ const SearchPage = props => {
     props.history.push(`/shop/${id}`);
   };
 
-  /**
-   * This method implements data filtering.
-   */
   const filterData = item => {
-    let result;
-
-    // TODO: Update search algorithm here and delete this message!
-    result =
+    return (
       item.title.toLowerCase().includes(props.searchValue.toLowerCase()) ||
       item.keywords.toLowerCase().includes(props.searchValue.toLowerCase()) ||
       item.description
         .toLowerCase()
         .includes(props.searchValue.toLowerCase()) ||
-      item.category.toLowerCase().includes(props.searchValue.toLowerCase());
-
-    return result;
+      item.category.toLowerCase().includes(props.searchValue.toLowerCase())
+    );
   };
 
   let ba = props.data.filter(filterData);

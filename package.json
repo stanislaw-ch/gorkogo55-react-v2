@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "bootstrap": "^4.3.1",
+    "core-js": "3",
     "lodash": "^4.17.11",
     "popper.js": "^1.14.7",
     "react": "^16.8.4",

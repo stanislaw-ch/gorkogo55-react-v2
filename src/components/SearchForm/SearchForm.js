@@ -5,11 +5,16 @@ import ListGroup from "react-bootstrap/ListGroup";
 
 import classes from "./SearchForm.module.css";
 
-const searchForm = ({ searchValue = '', changeSearchValue = alert('wrong'), ...props } = {}) => {
+const searchForm = ({
+  searchValue = "",
+  changeSearchValue = alert("wrong")
+) => {
   return (
     <Container>
       <ListGroup.Item className={classes["SearchPanel"]}>
-        <p className={classes["SearchTitle"]}>Введите поисковое слово или первые буквы:</p>
+        <p className={classes["SearchTitle"]}>
+          Введите поисковое слово или первые буквы:
+        </p>
         <Form.Control
           type="text"
           placeholder="Что найти?"

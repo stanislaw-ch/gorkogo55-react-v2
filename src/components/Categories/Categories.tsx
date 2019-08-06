@@ -3,7 +3,7 @@ import { Button } from "react-bootstrap";
 
 import classes from "./Categories.module.css";
 
-const Categories = props => {
+const Categories = ({ changeSearchCategory }) => {
   const categories = [
     "Мебель и предметы интерьера",
     "Техника и электроника",
@@ -19,7 +19,7 @@ const Categories = props => {
     <Button
       variant="light"
       className={classes.Button}
-      onClick={() => props.changeSearchCategory(cat)}
+      onClick={() => changeSearchCategory(cat)}
       key={Math.random()}
     >
       {cat}

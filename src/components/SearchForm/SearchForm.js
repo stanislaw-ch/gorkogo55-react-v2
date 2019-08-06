@@ -8,7 +8,7 @@ import classes from "./SearchForm.module.css";
 const searchForm = ({
   searchValue = "",
   changeSearchValue = alert("wrong")
-) => {
+}) => {
   return (
     <Container>
       <ListGroup.Item className={classes["SearchPanel"]}>

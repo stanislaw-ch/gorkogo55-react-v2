@@ -17,6 +17,7 @@
   },
   "scripts": {
     "dev": "parcel public/index.html",
+    "start": "react-scripts start",
     "format": "prettier --write \"src/**/*.{js,jsx,ts,tsx}\"",
     "clear-build-cache": "rm -rf .cache/ dist/",
     "lint": "tslint --project",

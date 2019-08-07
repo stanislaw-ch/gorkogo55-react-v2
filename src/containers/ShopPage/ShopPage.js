@@ -3,7 +3,7 @@ import { Container } from "react-bootstrap";
 
 import ShopFull from "../../components/Shop/ShopFull";
 import Header from "../../components/Header/Header";
-import Spinner from "../../components/Spinner/spinner.tsx";
+import Spinner from "../../components/Spinner/spinner";
 
 export default function ShopPage({
   history,

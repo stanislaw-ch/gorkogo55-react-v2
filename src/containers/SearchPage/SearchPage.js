@@ -4,7 +4,7 @@ import { Container, ListGroup, Button } from "react-bootstrap";
 import Header from "../../components/Header/Header";
 import SearchForm from "../../components/SearchForm/SearchForm";
 import ListShops from "../../components/Shop/ListShops";
-import Spinner from "../../components/Spinner/Spinner.tsx";
+import Spinner from "../../components/Spinner/spinner.tsx";
 
 import classes from "./SearchPage.module.css";
 

@@ -22,7 +22,7 @@ const App = props => {
     setLoading(true);
     Tabletop.init({
       key: SPREAD_SHEET_KEY,
-      callback: googleData => setDataFromGS(googleData),
+      callback: setDataFromGS,
       simpleSheet: true
     });
   }, []);

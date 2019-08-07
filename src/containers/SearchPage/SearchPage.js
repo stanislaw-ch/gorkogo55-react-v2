@@ -5,7 +5,7 @@ import Header from "../../components/Header/Header";
 import SearchForm from "../../components/SearchForm/SearchForm";
 import ShopInList from "../../components/Shop/ShopInList";
 import ShopFull from "../../components/Shop/ShopFull";
-import Spinner from "../../components/Spinner/Spinner";
+import Spinner from "../../components/Spinner/Spinner.tsx";
 
 import classes from "./SearchPage.module.css";
 

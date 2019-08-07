@@ -5,7 +5,7 @@ import { MdPhoneForwarded } from "react-icons/md";
 
 import { capitalizeFirstLetter } from "./ShopInList";
 
-const shop = ({
+export default function shop({
   number,
   title,
   description,
@@ -16,7 +16,7 @@ const shop = ({
   route,
   hashTageSearch,
   keywords
-}) => {
+}) {
   keywords = keywords.split(", ");
   return (
     <Card>
@@ -80,6 +80,4 @@ const shop = ({
       </Card.Body>
     </Card>
   );
-};
-
-export default shop;
+}

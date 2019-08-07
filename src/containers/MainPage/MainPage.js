@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { FaSearch } from "react-icons/fa";
 import { FiPhone, FiAlertCircle } from "react-icons/fi";
 
-import Categories from "../../components/Categories/Categories.tsx";
+import Categories from "../../components/Categories/Categories.js";
 import classes from "./MainPage.module.css";
 
 const MainPage = props => {
@@ -24,7 +24,7 @@ const MainPage = props => {
         <p>Выберите категорию:</p>
       </section>
       <section className={classes.Separator}>
-        <Categories ChangeSearchCategory={props.changeSearchCategory} />
+        <Categories changeSearchCategory={props.changeSearchCategory} />
       </section>
       <section className={[classes.Black, classes.BoxShadow].join(" ")}>
         <p>Все товары и услуги в одном месте</p>

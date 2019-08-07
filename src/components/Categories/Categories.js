@@ -3,30 +3,37 @@ import { Button } from "react-bootstrap";
 
 import classes from "./Categories.module.css";
 
-const Categories = ({ changeSearchCategory }) => {
-  const categories = [
-    "Мебель и предметы интерьера",
-    "Техника и электроника",
-    "Обувь и сумки",
-    "Кафе и развлечения",
-    "Сувениры и подарки",
-    "Красота и здоровье",
-    "одежда",
-    "Белье и одежда для дома",
-    "Услуги",
-    "Туалет"
-  ].map(cat => (
-    <Button
-      variant="light"
-      className={classes.Button}
-      onClick={() => changeSearchCategory(cat)}
-      key={Math.random()}
-    >
-      {cat}
-    </Button>
-  ));
+var categories = [
+	"Мебель и предметы интерьера",
+	"Техника и электроника",
+	"Обувь и сумки",
+	"Кафе и развлечения",
+	"Сувениры и подарки",
+	"Красота и здоровье",
+	"одежда",
+	"Белье и одежда для дома",
+	"Услуги",
+	"Туалет"
+]
 
-  return <div className={classes.Btns}>{categories}</div>;
+function renderCategories(items, clickFunc) {
+	return <div className={classes.Btns}>{
+		items.map(cat => (
+			<Button
+				variant="light"
+				className={classes.Button}
+				onClick={() => clickFunc(cat)}
+				key={Math.random()}
+			>
+				{cat}
+			</Button>
+		))
+	}</div>;
+}
+
+export default function Categories({ changeSearchCategory }) {
+	return renderCategories(
+		Object.freeze(categories),
+		changeSearchCategory
+	)
 };
-
-export default Categories;

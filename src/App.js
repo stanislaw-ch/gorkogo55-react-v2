@@ -11,12 +11,7 @@ import testData from "./data/shops.json";
 
 import classes from "./App.module.css";
 
-//
-// NOTE!
-// Google Sheets is being read with the help of this article:
-// https://medium.com/@ryan.mcnierney/using-react-google-sheets-as-your-cms-294c02561d59
-//
-const spreadSheetKey = "1rg0Wkb4E1MccFnNJcasmn4uUwxNXDOs_ObeOC9MyYiM";
+const SPREAD_SHEET_KEY = "1rg0Wkb4E1MccFnNJcasmn4uUwxNXDOs_ObeOC9MyYiM";
 
 const App = props => {
   const [isLoading, setLoading] = useState(false);
@@ -26,7 +21,7 @@ const App = props => {
   useEffect(() => {
     setLoading(true);
     Tabletop.init({
-      key: spreadSheetKey,
+      key: SPREAD_SHEET_KEY,
       callback: googleData => setDataFromGS(googleData),
       simpleSheet: true
     });
@@ -57,7 +52,7 @@ const App = props => {
         <Switch>
           <Route
             path="/"
-            exact
+            exact={true}
             render={routeProps => (
               <MainPage
                 {...routeProps}

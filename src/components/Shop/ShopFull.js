@@ -7,14 +7,14 @@ import { capitalizeFirstLetter } from "./ShopInList";
 
 const shop = ({
   number,
-  title = "shop",
-  description = "shop in gorkogo55",
-  phone = "777-777",
-  vk = "vk.ru",
-  instagram = "instagramm.com",
-  website = "www.gorkogo.55",
-  route = "gorkogo55",
-  hashTageSearch = "gorkogo55",
+  title,
+  description,
+  phone,
+  vk,
+  instagram,
+  website,
+  route,
+  hashTageSearch,
   keywords
 }) => {
   keywords = keywords.split(", ");

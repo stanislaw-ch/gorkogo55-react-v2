@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 Для запуска проекта на локальном компьютере, выполните команды:
 
 ```bash
-git clone https://github.com/VadimCpp/gorkogo55.git gorkogo55
+git clone https://github.com/reviakin/gorkogo55.git gorkogo55
 cd gorkogo55
 npm i
 npm start

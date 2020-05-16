@@ -52,17 +52,6 @@ const SearchPage = ({
             />
           </ListGroup>
         </Container>
-        <section className={[classes.Black, classes.BoxShadow].join(" ")}>
-          <p>Нашли ошибку? Сообщите нам!</p>
-          <Button
-            variant="danger"
-            size="lg"
-            className={classes.Button}
-            href="https://forms.gle/gRspoCUZuXFGzzXY8"
-          >
-            Сообщить об ошибке
-          </Button>
-        </section>
       </>
     );
   }

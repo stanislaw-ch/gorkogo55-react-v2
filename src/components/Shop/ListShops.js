@@ -16,14 +16,14 @@ function isMatch(item1, item2) {
     return item1.toLowerCase().includes(item2.toLowerCase());
 }
 
-function filterItems(item1, item2) {
-    var { title, keywords, description, category, number } = item1;
+function filterItems(shopObj, searchVal) {
+    var { title, keywords, description, category, number } = shopObj;
     return (
-        isMatch(title, item2) ||
-        isMatch(keywords, item2) ||
-        isMatch(description, item2) ||
-        isMatch(category, item2) ||
-        Number(number) === Number(item2)
+        isMatch(title, searchVal) ||
+        isMatch(keywords, searchVal) ||
+        isMatch(description, searchVal) ||
+        isMatch(category, searchVal) ||
+        Number(number) === Number(searchVal)
     );
 }
 

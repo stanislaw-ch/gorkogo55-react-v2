@@ -23,12 +23,22 @@ function filterItems(shopObj, searchVal) {
         isMatch(keywords, searchVal) ||
         isMatch(description, searchVal) ||
         isMatch(category, searchVal) ||
-        Number(number) === Number(searchVal)
+        searchVal.localeCompare(number) === 0
     );
 }
 
 function renderList(items, searchVal, hashTageSearch, selectShop) {
     var filteredItems = [...items].filter(item => filterItems(item, searchVal));
+    
+    //
+    // NOTE!
+    // Дополнительная сортировка на точное совпадение по номеру павильона
+    //
+    var extraFiltered = filteredItems.filter(item => searchVal.localeCompare(item.number) === 0);
+    if (extraFiltered.length === 1) {
+        filteredItems = extraFiltered;
+    }
+
     if (filteredItems.length < 1 && searchVal !== "") {
         return <p>Ничего не найдено...</p>;
     } else if (filteredItems.length === 1) {

@@ -45,6 +45,7 @@ function renderList(items, searchVal, hashTageSearch, selectShop) {
         var [shop] = filteredItems;
         return (
             <ShopFull
+                onSelectShop={selectShop}
                 hashTageSearch={hashTageSearch}
                 number={shop.number}
                 title={shop.title}

@@ -12,7 +12,13 @@ const Shop = ({ number, title, description, onSelectShop }) => {
   return (
     <ListGroup.Item
       className={classes.ShopCard}
-      onClick={() => onSelectShop(number)}
+      onClick={() => {
+        if (onSelectShop) {
+          onSelectShop(number);
+        } else {
+          alert('Ошибка! Невозможно открыть магазин. Обратитесь пожалуйста в поддержку.')
+        }
+      }}
       action
     >
       <div className={classes.Icon}>

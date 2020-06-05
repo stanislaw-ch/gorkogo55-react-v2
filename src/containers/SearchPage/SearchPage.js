@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Container, ListGroup, Button } from "react-bootstrap";
+import { Container, ListGroup } from "react-bootstrap";
 
 import Header from "../../components/Header/Header";
 import SearchForm from "../../components/SearchForm/SearchForm";

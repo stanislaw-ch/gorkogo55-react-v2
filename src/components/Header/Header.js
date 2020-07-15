@@ -13,7 +13,7 @@ const header = ({ goBack = alert("wrong"), title = "Горького55", history
   );
   if (pathname == "/search") {
     goBackElement = (
-      <a href="http://gorkogo55.ru/">
+      <a href="http://bagrationa49.ru/">
         <FaAngleLeft />
       </a>
     );

@@ -5,12 +5,12 @@ export default function ym() {
   return (
     <section className={[classes.Black, classes.BoxShadow].join(" ")}>
       <a
-        href="https://metrika.yandex.ru/stat/?id=53046907&amp;from=informer"
+        href="https://metrika.yandex.ru/stat/?id=70991530&amp;from=informer"
         target="_blank"
         rel="noopener noreferrer"
       >
         <img
-          src="https://informer.yandex.ru/informer/53046907/3_1_FFFFFFFF_FFFFFFFF_0_pageviews"
+          src="https://informer.yandex.ru/informer/70991530/3_1_FFFFFFFF_FFFFFFFF_0_pageviews"
           style={{
             width: "88px",
             height: "31px",
@@ -19,7 +19,7 @@ export default function ym() {
           alt="Яндекс.Метрика"
           title="Яндекс.Метрика: данные за сегодня (просмотры, визиты и уникальные посетители)"
           className="ym-advanced-informer"
-          data-cid="53046907"
+          data-cid="70991530"
           data-lang="ru"
         />
       </a>

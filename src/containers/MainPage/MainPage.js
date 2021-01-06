@@ -18,7 +18,7 @@ const MainPage = props => {
     <section className={classes.Main}>
       <header className={[classes.Brown, classes.BoxShadow].join(" ")}>
         <p className={classes.Title}>Добро пожаловать в</p>
-        <p>торговый центр «Две пятерки»</p>
+        <p>торговый центр «Парковый»</p>
       </header>
       <section className={[classes.Black, classes.BoxShadow].join(" ")}>
         <p>Выберите категорию:</p>

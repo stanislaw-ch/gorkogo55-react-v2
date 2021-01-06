@@ -11,7 +11,7 @@ import testData from "./data/shops.json";
 
 import classes from "./App.module.css";
 
-const SPREAD_SHEET_KEY = "1rg0Wkb4E1MccFnNJcasmn4uUwxNXDOs_ObeOC9MyYiM";
+const SPREAD_SHEET_KEY = "1Ohm0nhH0EXOsiMgx2YJN--fBEiT8CsNs0rlEjD2GkCk";
 
 const App = props => {
   const [isLoading, setLoading] = useState(false);

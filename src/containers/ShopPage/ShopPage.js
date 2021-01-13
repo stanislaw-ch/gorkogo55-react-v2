@@ -29,7 +29,7 @@ export default function ShopPage({
   } else {
     return (
       <>
-        <Header goBack={goSearchPage} title="Горького 55" history={history} />
+        <Header goBack={goSearchPage} title="Парковый" history={history} />
         <Container style={{ padding: "3vh", paddingTop: "7vh" }}>
           {renderShop(data, match, hashTageSearch)}
         </Container>

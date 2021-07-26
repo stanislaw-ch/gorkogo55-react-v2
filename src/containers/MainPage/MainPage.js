@@ -32,10 +32,16 @@ const MainPage = props => {
       <section className={[classes.Brown, classes.BoxShadow].join(" ")}>
         <div className={classes.OptionsContainer}>
           <div className={classes.Options}>
-            <p className={classes.Option} onClick={onSearchForm}>
+            <div
+              className={classes.Option}
+              onClick={onSearchForm}
+              onKeyPress={() => {}}
+              role="button"
+              tabIndex={0}
+            >
               <FaSearch className={classes.Icon} />
               Моментальный поиск
-            </p>
+            </div>
             <p className={classes.Option}>
               <FiPhone className={classes.Icon} />
               Звонок в один клик

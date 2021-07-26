@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
+import { useLocalObservable, Observer } from "mobx-react-lite"
 import Tabletop from "tabletop";
 
 import MainPage from "./containers/MainPage/MainPage";
@@ -45,8 +46,28 @@ const App = props => {
     setSearchValue("");
   };
 
+  //
+  // NOTE!
+  // Изменения сделаны по аналогии с обучающим видео:
+  // https://www.youtube.com/watch?v=wgSqWCcb9po
+  //
+  // Все работает
+  //
+  const store = useLocalObservable(() => {
+    return {
+      testValue: 0,
+      testAction() {
+        this.testValue += 1;
+      },
+    }
+  });
+
   return (
     <div className={classes.App}>
+      <Observer>
+        {() =><p style={{"color": "white"}}>{store.testValue}</p>}
+      </Observer>
+      <p><button onClick={store.testAction}>Test</button></p>
       <main>
         <Switch>
           <Route

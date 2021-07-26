@@ -24,6 +24,9 @@ const header = ({ goBack = alert("wrong"), title = "Парковый", history }
     >
       <div
         onClick={pathname != "/search" ? goBack : null}
+        onKeyPress={() => {}}
+        role="button"
+        tabIndex={0}
         className={classes.Icon}
       >
         {goBackElement}

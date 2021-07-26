@@ -36,4 +36,4 @@ export default function Categories({ changeSearchCategory }) {
 		Object.freeze(categories),
 		changeSearchCategory
 	)
-};
+}

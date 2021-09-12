@@ -2,39 +2,47 @@ import React, { useEffect } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 import { runInAction } from "mobx";
 import { observer } from "mobx-react-lite"
-import Tabletop from "tabletop";
 
 import MainPage from "./containers/MainPage/MainPage";
 import SearchPage from "./containers/SearchPage/SearchPage";
 import ShopPage from "./containers/ShopPage/ShopPage";
 import YM from "./components/YandexMetrica/ym";
+import PapaParse from "papaparse";
 
-import testData from "./data/shops.json";
+import spareData from "./data/shops.json";
 
 import classes from "./App.module.css";
 
-const SPREAD_SHEET_KEY = "1rg0Wkb4E1MccFnNJcasmn4uUwxNXDOs_ObeOC9MyYiM";
+const SPREAD_SHEET_LINK = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRjmR3TtfkpjeoCNxRvhe7cR1ZjHhXyy2BBkrK1dSkz57E4brSnUdQIG6LqXkm_5-IxQCSTNrsgLc9E/pub?output=csv";
 
 import { shopsStore } from './stores';
 const store = shopsStore();
+
 
 const App = props => {
   useEffect(() => {
     runInAction(() => {
       store.setIsLoading(true);
     })
-    Tabletop.init({
-      key: SPREAD_SHEET_KEY,
-      callback: setDataFromGS,
-      simpleSheet: true
+    PapaParse.parse(SPREAD_SHEET_LINK, {
+      header: true,
+      download: true,
+      skipEmptyLines: true,
+      complete: setDataFromGS,
     });
   }, []);
 
-  const setDataFromGS = sheets => {
-    runInAction(() => {
+  const setDataFromGS = result => {
+    const data = result.data
+    const errors = result.errors
+    if (!errors.length) {
       store.setIsLoading(false);
-      store.setData(sheets.length === 0 ? testData : sheets);
-    });
+      store.setData(data);
+    } else {
+      store.setIsLoading(false);
+      store.setData(spareData);
+      alert('Ошибка загрузки данных. Информация о магазинах может быть не актуальна!');
+    }
   };
 
   const changeSearchGroup = searchValue => {
